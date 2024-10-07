@@ -8,6 +8,8 @@ date: 2024
 
 # I) Récursivité
 
+## Principes
+
 ```python
 def fctA():
     print ("Début fonction fctA")
@@ -88,7 +90,7 @@ fctA()
 
 Si nous exécutons ce programme, nous allons obtenir une erreur :
 
-```python
+```
 RecursionError: maximum recursion depth exceeded while calling a Python object
 ```
 
@@ -96,8 +98,7 @@ Dans le cas où une fonction s'appelle elle-même (fonction récursive), on retr
 
 ![image](https://github.com/user-attachments/assets/01e803b1-b220-492f-9b36-9bad17c18c2e)
 
-
-Quand on écrit une fonction récursive, il est donc nécessaire de bien penser à mettre en place une structure qui à un moment ou à un autre mettra fin à ces appels récursifs.
+Quand on écrit une fonction récursive, il est donc nécessaire de bien penser à mettre en place une structure qui à un moment ou à un autre **mettra fin à ces appels récursifs**.
 
 Dans le cas de fonctions récursives, il est, comme pour n'importe quelle fonction, possible d'utiliser des paramètres :
 
@@ -132,14 +133,19 @@ Voici un schéma expliquant le processus en termes de pile d'exécution :
 
 ![image](https://github.com/user-attachments/assets/b79077aa-b2e1-4c0c-869a-4b156b53bd38)
 
-Il ne faut jamais perdre de vu qu'à chaque nouvel appel de la fonction fonct le paramètre n est différent.
+Il ne faut jamais perdre de vu qu'à chaque nouvel appel de la fonction **fonct** le paramètre **n** est différent.
 
-Nous allons étudier le calcul de la factorielle grâce à une fonction récursive. D'après Wikipédia : "En mathématiques, la factorielle d'un entier naturel n est le produit des nombres entiers strictement positifs inférieurs ou égaux à n". Par exemple : la factorielle de 3 est : 3 x 2 x 1 = 6 ; la factorielle de 4 est 4 x 3 x 2 x 1 = 24 ; la factorielle de 5 est 5 x 4 x 3 x 2 x 1 = 120 ...
+## Exemple de la factorielle
 
-Si on note la factorielle de n par n!, on a :
+Nous allons étudier le calcul de la factorielle grâce à une fonction récursive.
 
-- 0! = 1 (par définition
+D'après Wikipédia : "En mathématiques, la factorielle d'un entier naturel **n** est le produit des nombres entiers strictement positifs inférieurs ou égaux à n". 
 
+Par exemple : la factorielle de 3 est : 3 x 2 x 1 = 6 ; la factorielle de 4 est 4 x 3 x 2 x 1 = 24 ; la factorielle de 5 est 5 x 4 x 3 x 2 x 1 = 120 ...
+
+La factorielle de **n** est notée **n!**, ce qui donne :
+
+- 0! = 1 (défini)
 - Pour tout entier n > 0, n! = n x (n – 1)!
 
 Nous allons utiliser cette définition de la factorielle pour définir notre fonction récursive (nous allons utiliser le fait que la factorielle de n dépend de la factorielle de n-1 et que 0! = 1)
@@ -154,7 +160,7 @@ def fact(n) :
         return 1
 ```
 
-Comme vous pouvez le constater, la fonction fact est structurée de la même manière que la définition mathématique vu ci-dessus :
+La fonction **fact** est structurée ainsi :
 
 - dans le cas où n = 0 la fonction renvoie 1 (0! = 1)
 - dans le cas où n > 0 la fonction renvoie n*fact(n-1) (n! = n x (n – 1)!)
@@ -169,11 +175,13 @@ L'utilisation des fonctions récursives est souvent liée à la notion de récur
 
 En mathématiques une suite définie par récurrence est une suite définie par son premier terme et par une relation de récurrence, qui définit chaque terme à partir du précédent ou des précédents lorsqu'ils existent.
 
-Prenons l'exemple de la suite de Fibonacci qui est définie par :
+## Exemple de la suite de Fibonacci :
+
+La suite de Fibonacci qui est définie par :
 
 - u<sub>0</sub> = 0 et u<sub>1</sub> = 1
 
-- et par la relation de récurrence suivante avec n entier et n > 1 : u<sub>n</sub> = u<sub>n-1</sub> + u<sub>n-2</sub>
+- et par la relation de récurrence suivante avec **n un entier** et **n > 1** : **u<sub>n</sub> = u<sub>n-1</sub> + u<sub>n-2</sub>**
 
 Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 
