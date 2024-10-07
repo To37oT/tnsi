@@ -181,7 +181,7 @@ La suite de Fibonacci qui est définie par :
 
 - u<sub>0</sub> = 0 et u<sub>1</sub> = 1
 
-- et par la relation de récurrence suivante avec **n un entier** et **n > 1** : **u<sub>n</sub> = u<sub>n-1</sub> + u<sub>n-2</sub>**
+- et par la relation de récurrence suivante avec n un entier et n > 1 : **u<sub>n</sub> = u<sub>n-1</sub> + u<sub>n-2</sub>**
 
 Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 
