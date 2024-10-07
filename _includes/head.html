@@ -13,12 +13,15 @@
   <script>hljs.highlightAll();</script>
   <script>
 window.onload = function() {
+window.onload = function() {
     document.querySelectorAll('pre code').forEach((block) => {
-        if (block.classList.contains('language-scss')) {
-            block.classList.replace('language-scss', 'language-python');
-        }
+        block.classList.forEach((className) => {
+            if (className.startsWith('language-')) {
+                block.classList.replace(className, 'language-python'); // Remplacer toutes les langues par 'language-python'
+            }
+        });
     });
-    hljs.highlightAll();
+    hljs.highlightAll();  // Relancer le highlight.js après modification des classes
 };
   </script>
 
