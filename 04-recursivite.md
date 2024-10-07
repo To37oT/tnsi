@@ -53,29 +53,29 @@ Fin fonction fctB
 
 Dans l'exemple ci-dessus, nous avons une fonction (fctB) qui appelle une autre fonction (fctA). La principale chose à retenir de cet exemple est que l'exécution de fctB est interrompue pendant l'exécution de fctA. Une fois l'exécution de fctA terminée, l'exécution de fctB reprendra là où elle avait été interrompue.
 
-Pour gérer ces fonctions qui appellent d'autres fonctions, le système utilise une "pile d'exécution". Une pile d'exécution permet d'enregistrer des informations sur les fonctions en cours d'exécution dans un programme. On parle de pile, car les exécutions successives "s'empilent" les unes sur les autres. Si nous nous intéressons à la pile d'exécution du programme étudié ci-dessus, nous obtenons le schéma suivant :
+Pour gérer ces fonctions qui appellent d'autres fonctions, le système utilise une **pile d'exécution**. Une pile d'exécution permet d'enregistrer des informations sur les fonctions en cours d'exécution dans un programme. On parle de pile, car les exécutions successives s'empilent les unes sur les autres. Si nous nous intéressons à la pile d'exécution du programme étudié ci-dessus, nous obtenons le schéma suivant :
 
 ![image](https://github.com/user-attachments/assets/5fca7642-6e55-43aa-8898-62793871e42e)
 
-Nous pouvons "découper" l'exécution de ce programme en 3 parties :
+Nous pouvons découper l'exécution de ce programme en 3 parties :
 
 1. la fonction fctB s'exécute jusqu'à l'appel de la fonction fctA
-2. l'exécution de la fctB est mise en "pause" pendant l'exécution de la fonction fctA
+2. l'exécution de la fctB est **mise en pause** pendant l'exécution de la fonction fctA
 3. une fois que l'exécution de fctA est terminée, on termine l'exécution de la fonction fctB
 
 Il est important de bien comprendre que la fonction située au sommet de la pile d'exécution est en cours d'exécution. Toutes les fonctions situées "en dessous" sont mises en pause jusqu'au moment où elles se retrouveront au sommet de la pile. Quand une fonction termine son exécution, elle est automatiquement retirée du sommet de la pile (on dit que la fonction est dépilée).
 
-La pile d'exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son ""état de pause" (qu'elle se retrouvera au sommet de la pile d'exécution) :
+La pile d'exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son état de pause (qu'elle se retrouvera au sommet de la pile d'exécution) :
 
 ![image](https://github.com/user-attachments/assets/658f5fbc-64dd-4818-bcff-b9dbd4d2239d)
 
-Évidemment l'explication donnée ci-dessus est quelque peu simpliste : c'est l'adresse mémoire de la prochaine instruction machine à exécuter qui est conservée dans la pile d'exécution
+> Dans notre ordinateur, c'est l'adresse mémoire de la prochaine instruction machine à exécuter qui est conservée dans la pile d'exécution
 
-Dans l'exemple ci-dessus, on retrouve une variable i dans les deux fonctions : fctA et fctB. La variable i présente dans la fonction fctA n'a rien à voir avec la variable i présente dans la fonction fctB (elles portent le même nom, mais elles représentent 2 adresses mémoires différentes). Il est très important de bien comprendre que les variables créées dans une fonction ne "sortent" pas de la fonction : chaque fonction possède sa propre liste de variable, comme déjà dit ci-dessus la variable i de la fonction fctB est différente de la variable i de la fonction fctA.
+Dans l'exemple ci-dessus, on retrouve une variable i dans les deux fonctions : fctA et fctB. La variable i présente dans la fonction fctA n'a rien à voir avec la variable i présente dans la fonction fctB (elles portent le même nom, mais elles représentent 2 adresses mémoires différentes). Il est très important de bien comprendre que **les variables créées dans une fonction ne sortent pas de la fonction** : chaque fonction possède sa propre liste de variable, comme déjà dit ci-dessus la variable i de la fonction fctB est différente de la variable i de la fonction fctA.
 
-La pile d'exécution conserve une "trace" des valeurs des variables lorsqu'une autre fonction est exécutée. Par exemple la valeur de i (fctB) est conservée au moment de l'exécution de fctA. Quand l'exécution de fctA se termine est que l'exécution de fctB "reprend", la valeur référencée par i (fctB) a été "conservée" (voilà pourquoi on reprend l'exécution de fctB avec un "fctB 3").
+La pile d'exécution conserve une trace des valeurs des variables lorsqu'une autre fonction est exécutée. Par exemple la valeur de i (fctB) est conservée au moment de l'exécution de fctA. Quand l'exécution de fctA se termine est que l'exécution de fctB reprend, la valeur référencée par i (fctB) a été conservée (voilà pourquoi on reprend l'exécution de fctB avec un i égal à 3).
 
-Une fonction peut s'appeler elle-même, on parle alors de fonction récursive.
+**Une fonction peut s'appeler elle-même, on parle alors de fonction récursive.**
 
 Considérons de  programme suivant :
 
@@ -88,7 +88,7 @@ fctA()
 
 Si nous exécutons ce programme, nous allons obtenir une erreur :
 
-```
+```python
 RecursionError: maximum recursion depth exceeded while calling a Python object
 ```
 
