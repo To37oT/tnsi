@@ -200,13 +200,13 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 >Écrivez une fonction récursive fib qui retournera le (n+1)ième terme de la suite de Fibonacci (la suite commence avec n = 0 donc pour le 4e terme, nous avons n = 3). Cette fonction prendra en paramètre l'entier n.
 >
->[Faire l'exercice dans code Puzzle](https://www.codepuzzle.io/DLPUM){target:blank}
+>[Faire l'exercice dans code Puzzle](https://www.codepuzzle.io/DLPUM){:target="_blank"}
 
 ##### Exercice 2
 >
 >Dans cette activté, nous allons utiliser le module Python Turtle. Ce module permet de dessiner très simplement.
 >
->Étudiez le Wikibook consacré au module Turtle ([wikibook Turtle](https://fr.wikibooks.org/wiki/Programmation_Python/Turtle){target:blank}) afin d'acquérir les bases de ce module.
+>Étudiez le Wikibook consacré au module Turtle ([wikibook Turtle](https://fr.wikibooks.org/wiki/Programmation_Python/Turtle){:target="_blank"}) afin d'acquérir les bases de ce module.
 >
 >Essayez de prévoir le résultat de l'exécution du programme ci-dessus. Vérifiez votre hypothèse en exécutant le programme.
 >
@@ -221,7 +221,7 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 >Nous allons maintenant étudier le flocon de Koch.
 >
->Visionnez la vidéo consacrée au flocon de Koch : [vidéo consacrée au flocon de Koch](https://www.youtube.com/watch?v=PW_Pka9iBko&t=1s){target:blank}
+>Visionnez la vidéo consacrée au flocon de Koch : [vidéo consacrée au flocon de Koch](https://www.youtube.com/watch?v=PW_Pka9iBko&t=1s){:target="_blank"}
 >
 >Après avoir testé le programme ci-dessous, vous l'étudierez attentivement. Vous vous concentrerez notamment sur le rôle des paramètres taille et etape de la fonction flocon.
 >
