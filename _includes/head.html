@@ -12,9 +12,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
   <script>
-  document.querySelectorAll('pre code').forEach((block) => {
-    block.className = 'language-python';
+  document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((block) => {
+          if (block.classList.contains('language-scss')) {
+              block.classList.replace('language-scss', 'language-python'); // Remplace language-scss par language-python
+          }
+      });
+      hljs.highlightAll();  // Relancer le highlight.js après modification des classes
   });
-  hljs.highlightAll();  // Relancer le highlight.js après avoir modifié les classes
   </script>
+
 </head>
