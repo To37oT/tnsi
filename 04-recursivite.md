@@ -276,9 +276,9 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 ><iframe src="https://www.codepuzzle.io/ID2STW" width="100%" height="600" frameborder="0"></iframe>
 
 
-### exercices du bac
+## exercices du bac
 >
->- [Sujet 1 2021 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf){:target="_blank"}
->- [Sujet 5 2021 Exercice 4](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_05.pdf){:target="_blank"}
->- [Sujet 1 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_01.pdf){:target="_blank"}
->- [Sujet 7 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_07.pdf){:target="_blank"}
+>- [2021 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf){:target="_blank"}
+>- [2021 Exercice 4](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_05.pdf){:target="_blank"}
+>- [2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_01.pdf){:target="_blank"}
+>- [2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_07.pdf){:target="_blank"}
