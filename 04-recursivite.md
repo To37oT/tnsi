@@ -55,7 +55,7 @@ Dans l'exemple ci-dessus, nous avons une fonction (fctB) qui appelle une autre f
 
 Pour gérer ces fonctions qui appellent d'autres fonctions, le système utilise une "pile d'exécution". Une pile d'exécution permet d'enregistrer des informations sur les fonctions en cours d'exécution dans un programme. On parle de pile, car les exécutions successives "s'empilent" les unes sur les autres. Si nous nous intéressons à la pile d'exécution du programme étudié ci-dessus, nous obtenons le schéma suivant :
 
-![](img/nsi_term_rec_1.jpg)
+![image](https://github.com/user-attachments/assets/5fca7642-6e55-43aa-8898-62793871e42e)
 
 Nous pouvons "découper" l'exécution de ce programme en 3 parties :
 
@@ -67,7 +67,7 @@ Il est important de bien comprendre que la fonction située au sommet de la pile
 
 La pile d'exécution permet de retenir la prochaine instruction à exécuter au moment où une fonction sera sortie de son ""état de pause" (qu'elle se retrouvera au sommet de la pile d'exécution) :
 
-![](img/nsi_term_rec_2.jpg)
+![image](https://github.com/user-attachments/assets/658f5fbc-64dd-4818-bcff-b9dbd4d2239d)
 
 Évidemment l'explication donnée ci-dessus est quelque peu simpliste : c'est l'adresse mémoire de la prochaine instruction machine à exécuter qui est conservée dans la pile d'exécution
 
@@ -93,6 +93,9 @@ RecursionError: maximum recursion depth exceeded while calling a Python object
 ```
 
 Dans le cas où une fonction s'appelle elle-même (fonction récursive), on retrouve le même système de pile d'exécution. Dans l'exemple traité ci-dessus, les appels s'enchainent sans rien pour mettre un terme à cet enchainement, la taille de la pile d'exécution augmente sans cesse (aucune fonction ne termine son exécution, nous n'avons pas de "dépilement" juste des "empilements"). Le système interrompt le programme en générant une erreur quand la pile d'exécution dépasse une certaine taille.
+
+![image](https://github.com/user-attachments/assets/01e803b1-b220-492f-9b36-9bad17c18c2e)
+
 
 Quand on écrit une fonction récursive, il est donc nécessaire de bien penser à mettre en place une structure qui à un moment ou à un autre mettra fin à ces appels récursifs.
 
@@ -127,7 +130,7 @@ Analysons en détail le fonctionnement de ce programme :
 
 Voici un schéma expliquant le processus en termes de pile d'exécution :
 
-![](img/nsi_term_rec_3.jpg)
+![image](https://github.com/user-attachments/assets/b79077aa-b2e1-4c0c-869a-4b156b53bd38)
 
 Il ne faut jamais perdre de vu qu'à chaque nouvel appel de la fonction fonct le paramètre n est différent.
 
@@ -158,7 +161,7 @@ Comme vous pouvez le constater, la fonction fact est structurée de la même man
 
 On peut essayer de comprendre le fonctionnement du programme ci-dessus à l'aide du schéma suivant :
 
-![](img/nsi_term_rec_4.jpg)
+![nsi_term_rec_4](https://github.com/user-attachments/assets/c3376485-9c71-4a6d-abd2-bc8e5348ca61)
 
 On a fact(4) = 4 * fact(3) avec fact(3) = 3 * fact(2) avec fact(2) =  2 * fact(1) avec fact(1) = 1 * fact(0) avec fact(0) = 1 (par définition) donc fact(1) = 1 donc fact(2) = 2 donc fact(3) = 6 donc fact(4) = 24 
 
