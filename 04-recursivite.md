@@ -191,3 +191,61 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 - u<sub>3</sub> = u<sub>2</sub> + u<sub>1</sub> = 1 + 1 = 2
 - u<sub>4</sub> = u<sub>3</sub> + u<sub>2</sub> = 2 + 1 = 3
 - u<sub>5</sub> = u<sub>4</sub> + u<sub>3</sub> = 3 + 2 = 5
+
+##### Exercice 1
+>
+>On rappelle que la suite de Fibonacci est définie comme suit :
+>- u<sub>0</sub> = 0 et u<sub>1</sub> = 1
+>- et par la relation de récurrence suivante avec n entier et n > 1 : u<sub>n</sub> = u<sub>n-1</sub> + u<sub>n-2</sub>
+>
+>Écrivez une fonction récursive fib qui retournera le (n+1)ième terme de la suite de Fibonacci (la suite commence avec n = 0 donc pour le 4e terme, nous avons n = 3). Cette fonction prendra en paramètre l'entier n.
+>
+>[Faire l'exercice dans code Puzzle](https://www.codepuzzle.io/DLPUM){target:blank}
+
+##### Exercice 2
+>
+>Dans cette activté, nous allons utiliser le module Python Turtle. Ce module permet de dessiner très simplement.
+>
+>Étudiez le Wikibook consacré au module Turtle ([wikibook Turtle](https://fr.wikibooks.org/wiki/Programmation_Python/Turtle){target:blank}) afin d'acquérir les bases de ce module.
+>
+>Essayez de prévoir le résultat de l'exécution du programme ci-dessus. Vérifiez votre hypothèse en exécutant le programme.
+>
+>```python
+>import turtle as t
+>t.forward(100)
+>t.left(120)
+>t.forward(100)
+>t.left(120)
+>t.forward(100)
+>```
+>
+>Nous allons maintenant étudier le flocon de Koch.
+>
+>Visionnez la vidéo consacrée au flocon de Koch : [vidéo consacrée au flocon de Koch](https://www.youtube.com/watch?v=PW_Pka9iBko&t=1s){target:blank}
+>
+>Après avoir testé le programme ci-dessous, vous l'étudierez attentivement. Vous vous concentrerez notamment sur le rôle des paramètres taille et etape de la fonction flocon.
+>
+>```python
+>import turtle as t
+>
+>def koch(longueur, n):
+>    if n == 0:
+>        t.forward(longueur)
+>    else:
+>        koch(longueur/3, n-1)
+>        t.left(60)
+>        koch(longueur/3, n-1)
+>        t.right(120)
+>        koch(longueur/3, n-1)
+>        t.left(60)
+>        koch(longueur/3, n-1)
+>
+>def flocon(taille, etape):
+>    koch(taille, etape)
+>    t.right(120)
+>    koch(taille, etape)
+>    t.right(120)
+>    koch(taille, etape)
+>
+>flocon(100, 3)
+>```
