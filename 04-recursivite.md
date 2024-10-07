@@ -200,7 +200,7 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 >Écrivez une fonction récursive fib qui retournera le (n+1)ième terme de la suite de Fibonacci (la suite commence avec n = 0 donc pour le 4e terme, nous avons n = 3). Cette fonction prendra en paramètre l'entier n.
 >
->[Faire l'exercice dans code Puzzle](https://www.codepuzzle.io/DLPUM){:target="_blank"}
+><iframe src="https://www.codepuzzle.io/IDLPUM" width="100%" height="600" frameborder="0"></iframe>
 
 ##### Exercice 2
 >
@@ -259,10 +259,10 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >       return 1
 >   else :
 >       return n+fct(n+1)
->a = fct(2)
+>res = fct(2)
 >```
 >
->Que vaut la variable a après l’exécution de ce programme (justifiez votre réponse) ?
+>Que vaut la variable **res** après l’exécution de ce programme (justifiez votre réponse) ?
 
 ##### exercice 4
 >
@@ -273,12 +273,12 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 >Écrivez en Python une version récursive de la fonction puissance
 >
-><iframe src="https://www.codepuzzle.io/IDLPUM" width="100%" height="600" frameborder="0"></iframe>
+><iframe src="https://www.codepuzzle.io/ID2STW" width="100%" height="600" frameborder="0"></iframe>
 
 
 ### exercices du bac
-
-- [Sujet 1 2021 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf)
-- [Sujet 5 2021 Exercice 4](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_05.pdf)
-- [Sujet 1 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_01.pdf)
-- [Sujet 7 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_07.pdf)
+>
+>- [Sujet 1 2021 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf){:target="_blank"}
+>- [Sujet 5 2021 Exercice 4](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_05.pdf){:target="_blank"}
+>- [Sujet 1 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_01.pdf){:target="_blank"}
+>- [Sujet 7 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_07.pdf){:target="_blank"}
