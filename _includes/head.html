@@ -15,6 +15,7 @@
   document.addEventListener('DOMContentLoaded', (event) => {
       document.querySelectorAll('pre code').forEach((block) => {
           if (block.classList.contains('language-scss')) {
+              alert("d");
               block.classList.replace('language-scss', 'language-python'); // Remplace language-scss par language-python
           }
       });
