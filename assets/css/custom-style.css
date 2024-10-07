@@ -13,6 +13,9 @@ h5+blockquote {color:black; border: 1px red dashed; padding: 5px 10px; font-styl
 h5+blockquote .highlighter-rouge .highlight {background-color:#ffa}
 h5+blockquote code { background-color:#ffa}
 
+pre {padding: 0px;}
+
+
 @media (min-width:1000px) {
     .wrapper { max-width: calc(960px - (30px * 2));}
 }
