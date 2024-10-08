@@ -201,6 +201,8 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >Écrivez une fonction récursive fib qui retournera le (n+1)ième terme de la suite de Fibonacci (la suite commence avec n = 0 donc pour le 4e terme, nous avons n = 3). Cette fonction prendra en paramètre l'entier n.
 >
 ><iframe src="https://www.codepuzzle.io/IDLPUM" width="100%" height="600" frameborder="0"></iframe>
+>
+><button onclick="openFullscreen(this)">Mettre en plein écran</button>
 
 ##### Exercice 2
 >
@@ -274,6 +276,8 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >Écrivez en Python une version récursive de la fonction puissance
 >
 ><iframe src="https://www.codepuzzle.io/ID2STW" width="100%" height="600" frameborder="0"></iframe>
+>
+><button onclick="openFullscreen(this)">Mettre en plein écran</button>
 
 ##### exercice 5
 >Soit les images suivantes :
@@ -288,7 +292,8 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 
 ##### exercice 6
 ><iframe src="https://www.codepuzzle.io/IDXCGH" width="100%" height="600" frameborder="0"></iframe>
-><button onclick="openFullscreen(this)">Plein écran</button>
+>
+><button onclick="openFullscreen(this)">Mettre en plein écran</button>
 
 ## exercices du bac
 >
