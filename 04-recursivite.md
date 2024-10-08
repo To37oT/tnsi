@@ -286,6 +286,9 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 >A l'aide de Turtle réaliser en Python le programme qui permet de dessiner cette forme.
 
+##### exercice 6
+><iframe src="https://www.codepuzzle.io/IDXCGH" width="100%" height="600" frameborder="0"></iframe>
+
 ## exercices du bac
 >
 >- [2021 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf){:target="_blank"}
