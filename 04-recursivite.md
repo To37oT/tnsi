@@ -275,6 +275,16 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >
 ><iframe src="https://www.codepuzzle.io/ID2STW" width="100%" height="600" frameborder="0"></iframe>
 
+##### exercice 5
+>Soit les images suivantes :
+>
+>DEBUT :<br>
+>![depart](https://github.com/user-attachments/assets/cb8ad292-600e-4551-b7b3-31af3b7a9f34)
+>
+>FIN :<br>
+>![fin](https://github.com/user-attachments/assets/4e1cdec8-ee85-41a4-97c5-ee2544ad5e14)
+>
+>A l'aide de Turtle réaliser en Python le programme qui permet de dessiner cette forme.
 
 ## exercices du bac
 >
