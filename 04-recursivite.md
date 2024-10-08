@@ -288,7 +288,7 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 
 ##### exercice 6
 ><iframe src="https://www.codepuzzle.io/IDXCGH" width="100%" height="600" frameborder="0"></iframe>
-><button onclick="openFullscreen()">Plein écran</button>
+><button onclick="openFullscreen(this)">Plein écran</button>
 
 ## exercices du bac
 >
