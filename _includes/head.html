@@ -25,8 +25,9 @@ window.onload = function() {
 
   // Fonction pour ouvrir en plein écran l'iframe en dessous du bouton cliqué
   function openFullscreen(button) {
-    // Récupérer l'iframe suivant le bouton cliqué
-    var iframe = button.previousElementSibling;
+    // Remonter au parent <blockquote> et trouver l'iframe à l'intérieur
+    var blockquote = button.closest('blockquote');  // Sélectionne l'élément parent blockquote
+    var iframe = blockquote.querySelector('iframe'); // Trouve l'iframe à l'intérieur du blockquote
 
     if (iframe.requestFullscreen) {
       iframe.requestFullscreen();
