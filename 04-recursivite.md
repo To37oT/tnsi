@@ -284,10 +284,11 @@ Ce qui nous donne pour les 6 premiers termes de la suite de Fibonacci :
 >FIN :<br>
 >![fin](https://github.com/user-attachments/assets/4e1cdec8-ee85-41a4-97c5-ee2544ad5e14)
 >
->A l'aide de Turtle réaliser en Python le programme qui permet de dessiner cette forme.
+>A l'aide de Turtle réaliser en Python ** avec une méthode récursive** le programme qui permet de dessiner cette forme.
 
 ##### exercice 6
 ><iframe src="https://www.codepuzzle.io/IDXCGH" width="100%" height="600" frameborder="0"></iframe>
+><button onclick="openFullscreen()">Plein écran</button>
 
 ## exercices du bac
 >
