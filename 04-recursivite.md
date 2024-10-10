@@ -35,7 +35,7 @@ fctB()
 
 l'exécution de ce programme donne le résultat suivant :
 
-```python
+```text
 Début fonction fctB
 fctB 0
 fctB 1
