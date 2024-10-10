@@ -12,6 +12,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
   <script>
+
+    window.onload = function() {
+      document.querySelectorAll('div[class^="language-"').forEach((block) => {
+        sousBlock = block.querySelector('pre code')
+        const languageClass = Array.from(block.classList).find(className =>
+          className.startWith('language-'));
+        const languageClass2 = Array.from(sousBlock.classList).find(className) =>
+          className.startWith('language-'));
+        block.querySelector('pre code').classList.replace(languageClass2, languageClass);
+      }
+      hljs.highlightAll();  // Relancer le highlight.js après modification des classes
+  };
+
+
+    
   // Fonction pour ouvrir en plein écran l'iframe en dessous du bouton cliqué
   function openFullscreen(button) {
     // Remonter au parent <blockquote> et trouver l'iframe à l'intérieur
