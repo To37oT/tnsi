@@ -16,6 +16,7 @@
     window.onload = function() {
       document.querySelectorAll('div[class^="language-"').forEach((block) => {
         sousBlock = block.querySelector('pre code')
+        console.log(sousBlock);
         const languageClass = Array.from(block.classList).find(className =>
           className.startWith('language-'));
         const languageClass2 = Array.from(sousBlock.classList).find(className =>
