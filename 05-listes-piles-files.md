@@ -24,42 +24,54 @@ Une liste vide est très souvent représentée par **nil**.
 
 **Exemples :**
 
-Soit une liste L
-
 ```python
 L = vide()
 ```
 permet d'obtenir une liste vide notée L
+
+---
 
 ```python
 estVide(L)
 ```
 renvoie True
 
+---
+
 ```python
 L1 = cons(12, L)
 ```
 permet d'obtenir une liste L1 qui contient le nombre 12
+
+---
 
 ```python
 estVide(L1)
 ```
 renvoie False
 
+---
+
 ```python
 L1 = cons(15, L1)
 ```
 désormais la liste L1 contient les nombres 15 et 12
+
+---
 
 ```python
 L1 = cons(1, cons(11, L1))
 ```
 permet d'obtenir un liste L1 qui contient désormais les nombres 1, 11, 15 et 12
 
+---
+
 ```python
 car(L1)
 ```
 renvoie 1, la liste L1 reste inchangée
+
+---
 
 ```python
 L2 = cdr(L1)
