@@ -12,7 +12,7 @@ date: 2024
 De nombreux algorithmes manipulent des structures de données plus complexes que des simples nombres. Nous allons ici voir quelques-unes de ces structures de données : les listes, les piles et les files. Ces trois types de structures sont qualifiés de linéaires.
 
 ## 2) les listes
-Une liste est une structure de données permettant de regrouper des données. Une liste **L** est composée de 2 parties : **sa tête** (souvent noté **car**), qui correspond <u>au dernier élément ajouté</u> à la liste, et sa **queue** (souvent noté **cdr**) qui correspond <u>au reste de la liste</u>. Le langage de programmation Lisp (inventé par John McCarthy en 1958) a été un des premiers langages de programmation à introduire cette notion de liste (Lisp signifie "list processing"). Voici **les seules opérations** qui peuvent être effectuées sur une liste :
+Une liste est une structure de données permettant de regrouper des données. Une liste **L** est composée de 2 parties : **sa tête** (souvent noté **car**), qui correspond au dernier élément ajouté à la liste, et sa **queue** (souvent noté **cdr**) qui correspond au reste de la liste. Le langage de programmation Lisp (inventé par John McCarthy en 1958) a été un des premiers langages de programmation à introduire cette notion de liste (Lisp signifie "list processing"). Voici **les seules opérations** qui peuvent être effectuées sur une liste :
 
 - obtenir une liste vide (vide)
 - tester si une liste est vide (estVide)
@@ -20,27 +20,51 @@ Une liste est une structure de données permettant de regrouper des données. Un
 - obtenir une liste contenant tous les éléments d'une liste à l'exception du dernier élément ajouté (cdr)
 - construire une liste à partir d'un élément et d'un autre liste (cons)
 
-Une liste vide est très souvent représentée par nil.
+Une liste vide est très souvent représentée par **nil**.
 
-Exemples : 
+**Exemples :**
 
-Soit une liste L (**les  exemples suivants s’enchaînent**) 
+Soit une liste L
 
-L = vide() => permet d'obtenir une liste vide notée L
+```python
+L = vide()
+```
+permet d'obtenir une liste vide notée L
 
-estVide(L) => renvoie True
+```python
+estVide(L)
+```
+renvoie True
 
-L1 = cons(12, L) =>  permet d'obtenir une liste L1 qui contient le nombre 12
+```python
+L1 = cons(12, L)
+```
+permet d'obtenir une liste L1 qui contient le nombre 12
 
-estVide(L1) => renvoie False
+```python
+estVide(L1)
+```
+renvoie False
 
-L1 = cons(15, L1) => désormais la liste L1 contient les nombres 15 et 12
+```python
+L1 = cons(15, L1)
+```
+désormais la liste L1 contient les nombres 15 et 12
 
-il est possible d'enchainer les "cons" : L1 = cons(1, cons(11, L1)) => permet d'obtenir un liste L1 qui contient désormais les nombres 1, 11, 15 et 12
+```python
+L1 = cons(1, cons(11, L1))
+```
+permet d'obtenir un liste L1 qui contient désormais les nombres 1, 11, 15 et 12
 
-car(L1) renvoie 1, la liste L1 reste inchangée
+```python
+car(L1)
+```
+renvoie 1, la liste L1 reste inchangée
 
-L2 = cdr(L1) =>  la liste L2 contient 11,15 et 12 (la liste L1 reste inchangée)
+```python
+L2 = cdr(L1)
+```
+la liste L2 contient 11,15 et 12 (la liste L1 reste inchangée)
 
 ## 3) les  piles
 On retrouve dans les piles une partie des propriétés vues sur les listes. Dans les piles, il est uniquement possible de manipuler le dernier élément introduit dans la pile. On prend souvent l'analogie avec une pile d'assiettes : dans une pile d'assiettes la seule assiette directement accessible et la dernière assiette qui a été déposée sur la pile.
