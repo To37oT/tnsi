@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Chapitre 5 - Listes Piles Files
-permalink: /04-listes-piles-files/
+permalink: /05-listes-piles-files/
 published: true
 date: 2024
 ---
@@ -200,7 +200,7 @@ après avoir appliqué défile(F) une fois, taille(F) renvoie 5.
 
 ---
 
-### exercice 3
+##### exercice 3
 >
 >Soit une file F initialement vide. Soit les instructions suivantes :
 >
@@ -249,3 +249,87 @@ Dans une liste chaînée, à chaque élément de la liste on associe 2 cases mé
 Il est relativement facile d'insérer un élément dans une liste chaînée :
 
 ![image](https://github.com/user-attachments/assets/c7c33331-2938-4cf0-8b76-27c0118973ee)
+
+## 6) Liste, pile, file avec Python
+
+Soit le programme Python suivant :
+
+```python
+def vide():
+    return None
+def estVide(L):
+    return L is None
+def cons(x,L):
+    return (x,L)
+def car(L):
+    return(L[0])
+def cdr(L):
+    return(L[1])
+```
+
+Prendre le temps d'analyser le programme.
+
+Nous avons ici des fonctions permettant de simuler une liste.
+
+##### Exercice 4
+>
+> Soit le prgramme suivant :
+>
+>```python
+>L = vide()
+>L = cons(12, cons(5, cons (32, L)))
+>a = car(L)
+>L1 = cdr(L)
+>L1 = cons(42, cons(23, L1))
+>```
+>
+>Quel résultat obtenez-vous ?
+
+##### Exercice 5
+>
+>Soit le programme Python suivant :
+>
+>```python	
+>pile = []
+>tab = [5,8,6,1,3,7]
+>pile.append(5)
+>pile.append(10)
+>pile.append(8)
+>pile.append(15)
+>for i in tab:
+>    if i > 5:
+>        pile.pop()
+>```
+>Donnez l’état de la pile après l’exécution de ce programme.
+
+##### Exercice 6 
+>
+>Soit le programme Python suivant :
+>
+>```python
+>from collections import deque
+>file = deque([])
+>tab = [2,78,6,89,3,17]
+>file.append(5)
+>file.append(10)
+>file.append(8)
+>file.append(15)
+>for i in tab:
+>    if i > 50:
+>        file.popleft()
+>```
+>
+>Donnez l’état de la file après l’exécution de ce programme
+
+##### Exercice 7
+>
+>Python propose une implémentation des piles. Après avoir étudié la documentation consacrée à l'implémentation des piles en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-stacks) partie 5.1.1), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'activité 5.3 étaient correctes.
+
+### Exercice 8
+>
+>Python propose une implémentation des files. Après avoir étudié la documentation consacrée à l'implémentation des files en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-queues) partie 5.1.2), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'activité 5.5 étaient correctes.
+
+### Exercice 9
+>
+>Écrivez une fonction Python permettant de déterminer le nombre d'éléments présents dans une liste.
+
