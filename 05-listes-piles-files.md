@@ -78,12 +78,26 @@ L2 = cdr(L1)
 ```
 la liste L2 contient 11,15 et 12 (la liste L1 reste inchangée)
 
+##### exercice 1
+>
+>Soit la suite d'instructions suivantes :
+>
+>```python
+>L = vide()
+>L = cons(2, cons(15, cons (23, L)))
+>L1 = cdr(L)
+>res = car(L1)
+>L1 = cons(4, cons(3, L1))
+>```
+>Donnez le contenu des listes **L** et **L1** et la valeur de **res** à la fin du programme.
+
 ## 3) les  piles
-On retrouve dans les piles une partie des propriétés vues sur les listes. Dans les piles, il est uniquement possible de manipuler le dernier élément introduit dans la pile. On prend souvent l'analogie avec une pile d'assiettes : dans une pile d'assiettes la seule assiette directement accessible et la dernière assiette qui a été déposée sur la pile.
 
-![](img/nsi_term_structDo_liste_1.jpg)
+On retrouve dans les piles une partie des propriétés vues sur les listes. Dans les piles, il est uniquement possible de manipuler le dernier élément introduit dans la pile. On prend souvent l'analogie avec une pile d'assiettes : dans une pile d'assiettes la seule assiette directement accessible est la dernière assiette qui a été déposée sur la pile.
 
-Les piles sont basées sur le principe LIFO (Last In First Out : le dernier rentré sera le premier à sortir). On retrouve souvent ce principe LIFO en informatique.
+![image](https://github.com/user-attachments/assets/f3614086-9f6c-4b33-ac6d-fe5707e52610)
+
+Les piles sont basées sur le principe **LIFO** (Last In First Out : le dernier rentré sera le premier à sortir). On retrouve souvent ce principe LIFO en informatique.
 
 Voici les opérations que l'on peut réaliser sur une pile :
 
@@ -92,21 +106,55 @@ Voici les opérations que l'on peut réaliser sur une pile :
 - on peut récupérer l'élément au sommet de la pile tout en le supprimant. On dit que l'on dépile (dépiler en français, pop en anglais)
 - on peut connaitre le nombre d'éléments présents dans la pile (taille)
 
-Exemples :
+**Exemples :**
 
 Soit une pile P composée des éléments suivants : 12, 14, 8, 7, 19 et 22 (le sommet de la pile est 22) **Pour chaque exemple ci-dessous on repart de la pile d'origine** :
 
-- dépile(P) renvoie 22 et la pile P est maintenant composée des éléments suivants : 12, 14, 8, 7 et 19 (le sommet de la pile est 19)
-- empile(P,42) la pile P est maintenant composée des éléments suivants : 12, 14, 8, 7, 19, 22 et 42  (le sommet de la pile est 42)
-- si on applique dépile(P) 6 fois de suite, estVide(P) renvoie vrai
-- après avoir appliqué dépile(P) une fois, taille(P) renvoie 5
+```python
+dépile(P)
+```
+renvoie 22 et la pile P est maintenant composée des éléments suivants : 12, 14, 8, 7 et 19 (le sommet de la pile est 19)
+
+---
+
+```python
+empile(P,42)
+```
+la pile P est maintenant composée des éléments suivants : 12, 14, 8, 7, 19, 22 et 42  (le sommet de la pile est 42)
+
+---
+
+Si on applique dépile(P) 6 fois de suite, estVide(P) renvoie vrai
+
+---
+
+Après avoir appliqué dépile(P) une fois, taille(P) renvoie 5
+
+---
+
+##### exercice 2
+>
+>Soit une pile P initialement vide. Soit les instructions suivantes :
+>
+>```python
+>empile(P,4)
+>empile(P,7)
+>var1 = dépile(P)
+>var2 = taille(P)
+>var3 = dépile(P)
+>empile(P,3)
+>empile(P,2)
+>var4 = taille(P)
+>```
+>
+>Donnez le contenu de la pile **P**, la valeur de **var1**, la valeur de **var2**, la valeur de **var3** et la valeur de **var4**.
 
 ## 4)  les  files
 Comme les piles, les files ont des points communs avec les listes. Différences majeures : dans une file on ajoute des éléments à une extrémité de la file et on supprime des éléments à l'autre extrémité. On prend souvent l'analogie de la file d'attente devant un magasin pour décrire une file de données.
 
-![](img/nsi_term_structDo_liste_2.jpg) 
+![image](https://github.com/user-attachments/assets/7bc91180-31d0-45ce-b4c6-c1aa2f719ef1)
 
-Les files sont basées sur le principe FIFO (First In First Out : le premier qui est rentré sera le premier à sortir. Ici aussi, on retrouve souvent ce principe FIFO en informatique.
+Les files sont basées sur le principe **FIFO** (First In First Out : le premier qui est rentré sera le premier à sortir). Ici aussi, on retrouve souvent ce principe FIFO en informatique.
 
 Voici les opérations que l'on peut réaliser sur une file :
 
@@ -115,47 +163,89 @@ Voici les opérations que l'on peut réaliser sur une file :
 - on peut récupérer l'élément situé en bout de file tout en le supprimant (défiler en français, dequeue en anglais)
 - on peut connaitre le nombre d'éléments présents dans la file (taille)
 
-Exemples :
+**Exemples :**
 
 Soit une file F composée des éléments suivants : 12, 14, 8, 7, 19 et 22 (le premier élément rentré dans la file est 22 ; le dernier élément rentré dans la file est 12). **Pour chaque exemple ci-dessous on repart de la file d'origine** :
 
-- enfile(F,42) la file F est maintenant composée des éléments suivants : 42, 12, 14, 8, 7, 19 et 22 (le premier élément rentré dans la file est 22 ; le dernier élément rentré dans la file est 42)
-- défile(F) la file F est maintenant composée des éléments suivants : 12, 14, 8, 7, et 19 (le premier élément rentré dans la file est 19 ; le dernier élément rentré dans la file est 12)
-- si on applique défile(F) 6 fois de suite, estVide(F) renvoie vrai
-- après avoir appliqué défile(F) une fois, taille(F) renvoie 5.
+```python
+enfile(F,42)
+```
+la file F est maintenant composée des éléments suivants : 42, 12, 14, 8, 7, 19 et 22 (le premier élément rentré dans la file est 22 ; le dernier élément rentré dans la file est 42)
+
+---
+
+```python
+défile(F)
+```
+la file F est maintenant composée des éléments suivants : 12, 14, 8, 7, et 19 (le premier élément rentré dans la file est 19 ; le dernier élément rentré dans la file est 12)
+
+---
+
+Autre variante :
+
+```python
+var = défile(F)
+```
+la file F est maintenant composée des éléments suivants : 12, 14, 8, 7, et 19 (comme précédemment)
+
+**var** contient la valeur 22
+
+---
+
+si on applique défile(F) 6 fois de suite, estVide(F) renvoie vrai
+
+---
+
+après avoir appliqué défile(F) une fois, taille(F) renvoie 5.
+
+---
+
+### exercice 3
+>
+>Soit une file F initialement vide. Soit les instructions suivantes :
+>
+>```python
+>enfile(F,6)
+>enfile(F,3)
+>var1 = défile(F)
+>enfile(F,9)
+>var2 = taille(F)
+>enfile(F,17)
+>var3 = défile(F)
+>enfile(F,2)
+>var4 = taille(F)
+>```
+>
+>Donnez le contenu de la file F, la valeur de var1, la valeur de var2, la valeur de var3 et la valeur de var4.
 
 ## 5) Types abstraits et représentation concrète des données
 
-Nous avons évoqué ci-dessus la manipulation des types de données (liste, pile et file) par des algorithmes, mais, au-delà de la beauté intellectuelle de réfléchir sur ces algorithmes, le but de l'opération est souvent, à un moment ou un autre, de "traduire" ces algorithmes dans un langage compréhensible pour un ordinateur (Python, Java, C,...). On dit alors que l'on implémente un algorithme. Il est donc aussi nécessaire d'implémenter les types de données comme les listes, les piles ou les files afin qu'ils soient utilisables par les ordinateurs. Les listes, les piles ou les files sont des "vues de l'esprit" présentes uniquement dans la tête des informaticiens, on dit que ce sont des types abstraits de données (ou plus simplement des types abstraits). L'implémentation de ces types abstraits, afin qu'ils soient utilisables par une machine, est loin d'être une chose triviale. L'implémentation d'un type de données dépend du langage de programmation. Il faut, quel que soit le langage utilisé, que le programmeur retrouve les fonctions qui ont été définies pour le type abstrait (pour les listes, les piles et les files cela correspond aux fonctions définies ci-dessus). Certains types abstraits ne sont pas forcément implémentés dans un langage donné, si le programmeur veut utiliser ce type abstrait, il faudra qu'il le programme par lui-même en utilisant les "outils" fournis par son langage de programmation.
+Nous avons évoqué ci-dessus la manipulation des types de données (liste, pile et file) par des algorithmes, mais le but de l'opération est souvent de traduire ces algorithmes dans un langage compréhensible pour un ordinateur (Python, Java, C,...). On dit alors que l'on **implémente un algorithme**. Il est donc aussi nécessaire d'implémenter les types de données comme les listes, les piles ou les files afin qu'ils soient utilisables par les ordinateurs. 
 
-Pour implémenter les listes (ou les piles et les files), beaucoup de langages de programmation utilisent 2 structures : les tableaux et les listes chaînées.
+Les listes, les piles ou les files sont des types présents uniquement dans la tête des informaticiens, on dit que ce sont des **types abstraits**. 
+
+Pour implémenter les listes (ou les piles et les files), beaucoup de langages de programmation utilisent 2 structures : **les tableaux** et **les listes chaînées**.
 
 Un tableau est une suite contiguë de cases mémoires (les adresses des cases mémoire se suivent) :
 
-![](img/nsi_term_structDo_liste_3.jpg) 
+![image](https://github.com/user-attachments/assets/54858c43-c4f8-490a-ace1-2a129e6d10f7)
 
 Le système réserve une plage d'adresse mémoire afin de stocker des éléments.
 
-![](img/nsi_term_structDo_liste_4.jpg) 
+![image](https://github.com/user-attachments/assets/e3774035-1ffc-44fb-b451-284365b7d6ae)
 
 La taille d'un tableau est fixe : une fois que l'on a défini le nombre d'éléments que le tableau peut accueillir, il n'est pas possible modifier sa taille. Si l'on veut insérer une donnée, on doit créer un nouveau tableau plus grand et déplacer les éléments du premier tableau vers le second tout en ajoutant la donnée au bon endroit !
 
-Dans certains langages de programmation, on trouve une version "évoluée" des tableaux : les tableaux dynamiques. Les tableaux dynamiques ont une taille qui peut varier. Il est donc relativement simple d'insérer des éléments dans le tableau. Ce type de tableaux permet d'implémenter facilement le type abstrait liste (de même pour les piles et les files).
+Dans certains langages de programmation, on trouve une version "évoluée" des tableaux : **les tableaux dynamiques**. Les tableaux dynamiques ont une taille qui peut varier. Il est donc relativement simple d'insérer des éléments dans le tableau. Ce type de tableaux permet d'implémenter facilement le type abstrait liste (de même pour les piles et les files).
 
-À noter que les "listes Python" (listes Python) sont des tableaux dynamiques. Attention de ne pas confondre avec le type abstrait liste défini ci-dessus, ce sont de "faux amis".
-
-tableau dynamique :
-
-![](img/nsi_term_structDo_liste_5.jpg)
+À noter que les tableaux Python (type list) sont des tableaux dynamiques. **Attention de ne pas confondre avec le type abstrait liste défini ci-dessus avec le type list de python**.
 
 Autre type de structure que l'on rencontre souvent et qui permet d'implémenter les listes, les piles et les files : les listes chaînées.
 
 Dans une liste chaînée, à chaque élément de la liste on associe 2 cases mémoire : la première case contient l'élément et la deuxième contient l'adresse mémoire de l'élément suivant.
 
-![](img/nsi_term_structDo_liste_6.jpg) 
+![image](https://github.com/user-attachments/assets/f2cf0e10-4aac-4acd-ab3d-fd088843a0f1)
 
 Il est relativement facile d'insérer un élément dans une liste chaînée :
 
-![](img/nsi_term_structDo_liste_7.jpg) 
-
-Il est aussi possible d'implémenter les types abstraits en utilisant des structures plus complexes que les tableaux et les listes chaînées (nous  verrons des exemples en Python dans les activités).
+![image](https://github.com/user-attachments/assets/c7c33331-2938-4cf0-8b76-27c0118973ee)
