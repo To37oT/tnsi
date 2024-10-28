@@ -333,3 +333,17 @@ Nous avons ici des fonctions permettant de simuler une liste.
 >
 >Écrivez une fonction Python permettant de déterminer le nombre d'éléments présents dans une liste.
 
+### exercices du bac
+
+- [Sujet 1 2021 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_01.pdf){:target="_blank"}
+- [Sujet 3 2021 Exercice 5](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_03.pdf){:target="_blank"}
+- [Sujet 6 2021 Exercice 5](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_06.pdf){:target="_blank"}
+- [Sujet 7 2021 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_07.pdf){:target="_blank"}
+- [Sujet 8 2021 Exercice 5](https://pixees.fr/informatiquelycee/term/suj_bac/2021/sujet_08.pdf){:target="_blank"}
+- [Sujet 1 2022 Exercice 4](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_01.pdf){:target="_blank"}
+- [Sujet 2 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_02.pdf){:target="_blank"}
+- [Sujet 3 2022 Exercice 2](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_03.pdf){:target="_blank"}
+- [Sujet 4 2022 Exercice 5](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_04.pdf){:target="_blank"}
+- [Sujet 10 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_10.pdf){:target="_blank"}
+- [Sujet 11 2022 Exercice 1](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_11.pdf){:target="_blank"}
+- [Sujet 14 2022 Exercice 5](https://pixees.fr/informatiquelycee/term/suj_bac/2022/sujet_14.pdf){:target="_blank"}
