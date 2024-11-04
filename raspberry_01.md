@@ -22,6 +22,7 @@ import time
 import threading #pour faire des évènements parallèles
 
 # Initialisation du GPIO
+#ATTENTION, GPIO.PUD_UP permet de sécuriser la rasberry avec une résistance interne pour ne pas endommager la carte (et sans mettre une résistance physique)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
