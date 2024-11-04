@@ -1,9 +1,25 @@
+---
+layout: default
+title: Raspberry - boutons
+permalink: /01-raspberry/
+published: true
+date: 2024
+---
+
+# I) Raspberry I/O
+
+![image](https://github.com/user-attachments/assets/28a679cd-387a-47ae-8353-75ae945aa4b1)
+
+# I) Raspberry avec boutons poussoirs
+
+## Code python
+
 ```python
-import RPi.GPIO as GPIO
-import tkinter as tk
-from random import choice
+import RPi.GPIO as GPIO #pour utiliser les pins
+import tkinter
+from random import choice 
 import time
-import threading
+import threading #pour faire des évènements parallèles
 
 # Initialisation du GPIO
 GPIO.setmode(GPIO.BCM)
@@ -22,11 +38,14 @@ def change_color():
     new_color = choice(colors)
     canvas.configure(bg=new_color)
 
+
+# Fonction pour déplacer carré à gauche
 def move_left():
     global square_x
     if square_x > 0:
         canvas.move(square, -5, 0)
 
+# Fonction pour déplacer carré à droite
 def move_right():
     global square_x
     if square_x < 290:
@@ -51,13 +70,9 @@ def check_button():
 def close_window():
     global running
     running = False
-    time.sleep(1) #pour que le thread se terminefaire un ca
+    time.sleep(1) #pour que le thread se termine (voir après)
     GPIO.cleanup()
     window.destroy()
-
-# Configurer une interruption pour détecter les pressions de bouton
-#GPIO.add_event_detect(4, GPIO.RISING, callback=button_pressed, bouncetime=300)
-
          
 # Interface graphique avec Tkinter
 window = tk.Tk()
@@ -69,6 +84,7 @@ canvas.pack()
 
 square = canvas.create_rectangle(square_x, square_y, square_x + 10, square_y + 10, fill="black")
 
+#pour éxécuter la fonction et sa boucle en parallèle
 button_thread = threading.Thread(target=check_button)
 button_thread.daemon = True
 button_thread.start()
@@ -78,7 +94,6 @@ window.protocol("WM_DELETE_WINDOW", close_window)
 # Boucle principale de l'interface
 window.mainloop()
 
-
-# Nettoyage des GPIO à la fin du programme
+# Nettoyage des GPIO à la fin du programme (les libères)
 GPIO.cleanup()
 ```
