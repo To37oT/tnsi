@@ -53,9 +53,9 @@ On ne pourrait pas avec une simple liste qui contiendrait les noms des fichiers 
 
 On trouve souvent dans cette hiérarchie une notion de temps (les quarts de finale sont avant les demi-finales ou encore votre grand-mère paternelle est née avant votre père), mais ce n'est pas une obligation (voir l'arborescence du système de fichiers).
 
-## 2) les arbres binaires
+## 2) Les arbres binaires
 
-### a) introduction
+### a) Introduction
 
 Les arbres binaires sont des cas particuliers d'arbres : l'arbre du tournoi de rugby et l'arbre "père, mère..." sont des arbres binaires, en revanche, l'arbre représentant la structure du système de fichier n'est pas un arbre binaire. **Dans un arbre binaire, on a au maximum 2 branches qui partent d'un élément.**
 
@@ -65,37 +65,37 @@ Soit l'arbre binaire suivant :
 
 ![nsi_term_structDo_arbre_3](https://github.com/user-attachments/assets/f0d586dc-3f7c-4eb6-8e99-0ddbdf304480)
 
-### b) un peu de vocabulaire
+### b) Un peu de vocabulaire
 
-- chaque élément de l'arbre est appelé noeud (par exemple : A, B, C, D,...,P et Q sont des noeuds)
-- le noeud initial (ici A) est appelé noeud racine ou plus simplement racine
-- On dira que le noeud E et le noeud D sont les fils du noeud B. On dira que le noeud B est le père des noeuds E et D
-- Dans un arbre binaire, un noeud possède au plus 2 fils
-- Un noeud n'ayant aucun fils est appelé feuille (exemples : D, H, N, O, J, K, L, P et Q sont des feuilles)
-- À chaque noeud d'un arbre binaire, on associe une clé (on peut aussi utiliser le terme "valeur" à la place de clé), un "sous-arbre gauche" et un "sous-arbre droit" (exemple : à partir du noeud ayant pour clé C on va trouver un sous-arbre gauche composé des noeuds F, J et K et un sous-arbre droit composé des noeuds G, L, M, P et Q)
-- Un arbre (ou un sous-arbre) vide est noté NIL (NIL est une abréviation du latin nihil qui veut dire "rien"). Par exemple, le sous-arbre gauche du noeud D est NIL (même chose pour son sous-arbre droit d'ailleurs puisque D est une feuille).
-- On appelle arête le segment qui relie 2 noeuds.
-- On appelle taille d'un arbre le nombre de noeuds présents dans cet arbre
-- On appelle profondeur d'un nœud ou d'une feuille dans un arbre binaire le nombre de nœuds du chemin qui va de la racine à ce nœud. La racine d'un arbre est à une profondeur 1, et la profondeur d'un nœud est égale à la profondeur de son prédécesseur plus 1. Si un noeud est à une profondeur p, tous ses successeurs sont à une profondeur p+1. Exemples : profondeur de B = 2 ; profondeur de I = 4 ; profondeur de P = 5
-ATTENTION : on trouve aussi dans certains livres la profondeur de la racine égale à 0 (on trouve alors : profondeur de B = 1 ; profondeur de I = 3 ; profondeur de P = 4). Les 2 définitions sont valables, il faut juste préciser si vous considérez que la profondeur de la racine est de 1 ou de 0.
-- On appelle hauteur d'un arbre la profondeur maximale des nœuds de l'arbre. Exemple : la profondeur de P = 5, c'est un des noeuds les plus profond, donc la hauteur de l'arbre est de 5.
-ATTENTION : comme on trouve 2 définitions pour la profondeur, on peut trouver 2 résultats différents pour la hauteur : si on considère la profondeur de la racine égale à 1, on aura bien une hauteur de 5, mais si l'on considère que la profondeur de la racine est de 0, on aura alors une hauteur de 4.
+- chaque élément de l'arbre est appelé **noeud** (par exemple : A, B, C, D,...,P et Q sont des noeuds)
+- le noeud initial (ici A) est appelé **racine**
+- On dira que le noeud E et le noeud D sont **les fils** du noeud B. On dira que le noeud B est **le père** des noeuds E et D
+- Dans un arbre binaire, un noeud possède **au plus 2 fils**
+- Un noeud n'ayant aucun fils est appelé **feuille** (exemples : D, H, N, O, J, K, L, P et Q sont des feuilles)
+- À chaque noeud d'un arbre binaire, on associe **une clé** (on peut aussi utiliser le terme "valeur" à la place de clé), un **sous-arbre gauche** et un **sous-arbre droit** (exemple : à partir du noeud ayant pour clé C on va trouver un sous-arbre gauche composé des noeuds F, J et K et un sous-arbre droit composé des noeuds G, L, M, P et Q)
+- Un arbre (ou un sous-arbre) vide est noté **NIL** (NIL est une abréviation du latin nihil qui veut dire "rien"). Par exemple, le sous-arbre gauche du noeud D est NIL (même chose pour son sous-arbre droit d'ailleurs puisque D est une feuille).
+- On appelle **arête** le segment qui relie 2 noeuds.
+- On appelle **taille** d'un arbre le nombre de noeuds présents dans cet arbre
+- On appelle **profondeur** d'un noeud ou d'une feuille dans un arbre binaire le nombre de noeud du chemin qui va de la racine à ce noeud. 
+_ATTENTION : la racine peut être initialisé à une profondeur de 0 ou 1, cela vous sera toujours précisé. Par exemple, la profondeur de B est 1 si la racine est à 0, la profondeur de B est 2 si la racine est à une profondeur de 1._
+- On appelle **hauteur** d'un arbre la profondeur maximale des noeud de l'arbre. Exemple : la profondeur de P = 5, c'est un des noeuds les plus profond, donc la hauteur de l'arbre est de 5.
+_ATTENTION : comme pour la profondeur, on trouvera 2 approches différentes pour le calcul de la hauteur. Ici la hauteur de l'arbre est 5 si la racine est à 1, 4 si la racine est à 0._
 
-### c) structure récursive
+### c) Structure récursive
 
 Il est important de bien noter que l'on peut aussi voir les arbres comme des structures récursives : les fils d'un noeud sont des arbres (sous-arbre gauche et un sous-arbre droite dans le cas d'un arbre binaire), ces arbres sont eux-mêmes constitués d'arbres...
 
-### d) encadrement de la hauteur d'un arbre
+### d) Encadrement de la hauteur d'un arbre
 
 Il est possible d'avoir des arbres binaires de même taille, mais de "forme" très différente :
 
-![](img/nsi_term_structDo_arbre_4.jpg)
+![nsi_term_structDo_arbre_4](https://github.com/user-attachments/assets/870c0964-1700-4979-80ce-4cbc5b53919a)
 
-Sur le schéma ci-dessus l'arbre 1 est dit " filiforme" alors que l'arbre 2 est dit "complet" (on dira qu'un arbre binaire est complet si tous les noeuds possèdent 2 fils et que toutes les feuilles se situent à la même profondeur). On pourra aussi dire que l'arbre 1 est déséquilibré alors que l'arbre 2 est équilibré.
+Sur le schéma ci-dessus l'arbre 1 est dit **filiforme** alors que l'arbre 2 est dit **complet** (on dira qu'un arbre binaire est complet si tous les noeuds possèdent 2 fils et que toutes les feuilles se situent à la même profondeur).
 
-Si on prend un arbre filiforme de taille n, on peut dire que la hauteur de cet arbre est égale à $n−1$ (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 0)
+Si on prend un arbre filiforme de taille $n$, on peut dire que la hauteur de cet arbre est égale à $n$ (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 1)
 
-Si on prend un arbre complet de taille n, on peut démontrer que la hauteur de cet arbre est égale à la partie entière de $log_2(n)$ (on arrondit à l'entier immédiatement inférieur le $log_2(n)$). Dans le cas de l'arbre 2, nous avons $log_2(7)=2,8$ donc en prenant la partie entière on a bien la hauteur de l'arbre 2 égale à 2.
+Si on prend un arbre complet de taille $n$, on peut démontrer que la hauteur de cet arbre est égale à $log_2(n+1)$. Dans le cas de l'arbre 2, nous avons $log_2(8)=3$ nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
 
 Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirmer que pour un arbre binaire quelconque :
 
