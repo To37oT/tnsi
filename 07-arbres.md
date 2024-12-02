@@ -97,6 +97,11 @@ Si on prend un arbre filiforme de taille $n$, on peut dire que la hauteur de cet
 
 Si on prend un arbre complet de taille $n$, on peut démontrer que la hauteur de cet arbre est égale à $log_2(n+1)$. Dans le cas de l'arbre 2, nous avons $log_2(8)=3$ nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
 
+Rappels sur les logarithmes (regarder jusqu'à 4'25, tenter de faire les exercices) :
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aSttv6EyhU8?si=ag9qYPuH0ExO94X2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirmer que pour un arbre binaire quelconque :
 
 $\lfloor log_2(n) \rfloor  \leq h \leq n-1$
