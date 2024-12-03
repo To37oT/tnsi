@@ -16,17 +16,17 @@ Au départ nous avons 4 poules de 4 équipes. Les 4 équipes d'une poule s'affro
 
 Dans ce qui suit, on désigne les 2 qualifiés par poule par :
 
-- Poule 1 => 1er = Eq1 ; 2e = Eq8
-- Poule 2 => 1er = Eq2 ; 2e = Eq7
-- Poule 3 => 1er = Eq3 ; 2e = Eq6
-- Poule 4 => 1er = Eq4 ; 2e = Eq5
+- Poule 1 => 1er = **Eq1** | 2e = **Eq8**
+- Poule 2 => 1er = **Eq2** | 2e = **Eq7**
+- Poule 3 => 1er = **Eq3** | 2e = **Eq6**
+- Poule 4 => 1er = **Eq4** | 2e = **Eq5**
 
 En quart de final, on va avoir :
 
-- quart de finale 1 => Eq1 contre Eq5
-- quart de finale 2 => Eq2 contre Eq6
-- quart de finale 3 => Eq3 contre Eq7
-- quart de finale 4 => Eq4 contre Eq8
+- quart de finale 1 => **Eq1** contre **Eq5**
+- quart de finale 2 => **Eq2** contre **Eq6**
+- quart de finale 3 => **Eq3** contre **Eq7**
+- quart de finale 4 => **Eq4** contre **Eq8**
 
 Pour les demi-finales on aura :
 
@@ -93,9 +93,9 @@ Il est possible d'avoir des arbres binaires de même taille, mais de "forme" tr�
 
 Sur le schéma ci-dessus l'arbre 1 est dit **filiforme** alors que l'arbre 2 est dit **complet** (on dira qu'un arbre binaire est complet si tous les noeuds possèdent 2 fils et que toutes les feuilles se situent à la même profondeur).
 
-Si on prend un arbre filiforme de taille $n$, on peut dire que la hauteur de cet arbre est égale à $n$ (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 1)
+Si on prend un arbre filiforme de taille ```n```, on peut dire que la hauteur de cet arbre est égale à ```n``` (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 1)
 
-Si on prend un arbre complet de taille $n$, on peut démontrer que la hauteur de cet arbre est égale à $log_2(n+1)$. Dans le cas de l'arbre 2, nous avons $log_2(8)=3$ nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
+Si on prend un arbre complet de taille ```n```, on peut démontrer que la hauteur de cet arbre est égale à ```log<sub>2</sub>(n+1)```. Dans le cas de l'arbre 2, nous avons ```log<sub>2</sub>(8)=3``` nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
 
 Rappels sur les logarithmes (regarder jusqu'à 4'25, tenter de faire les exercices) :
 
@@ -104,13 +104,36 @@ Rappels sur les logarithmes (regarder jusqu'à 4'25, tenter de faire les exercic
 
 Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirmer que pour un arbre binaire quelconque :
 
-$\lfloor log_2(n) \rfloor  \leq h \leq n-1$
-				
-avec n la taille de l'arbre et h la hauteur de l'arbre ($\lfloor log_2(n) \rfloor$ permet de prendre la partie entière du logarithme base 2 de n)
+![image](https://github.com/user-attachments/assets/eccdcae9-9ff4-4e2f-aa25-ae6954a4e818)
+
+![image](https://github.com/user-attachments/assets/bdb1edba-3030-4411-81fa-fd305be4f103)
+
+avec ```n``` la taille de l'arbre et ```h``` la hauteur de l'arbre.
 
 ### e) les arbres binaires en Python
 
 Python ne propose pas de façon native l'implémentation des arbres binaires. Mais nous aurons, plus tard dans l'année, l'occasion d'implémenter des arbres binaires en Python en utilisant la programmation orientée objet.
+
+##### Exercice 1
+>Soit l'arbre binaire suivant :
+>
+>![c7a_1](https://github.com/user-attachments/assets/2a355912-3598-45b9-bfac-de6938483ef9)
+>
+>1) Cet arbre est-il un arbre binaire ? Justifiez votre réponse.
+>
+>2) Donnez la clé (valeur) de la racine de cet arbre.
+>
+>3) Quels sont les fils du noeud B.
+>
+>4) Donnez l'arbre droit du noeud A.
+>
+>5) Le noeud C est-il une feuille ? Justifiez votre réponse.
+>
+>6) Donnez la taille de cet arbre.
+>
+>7) Donnez la profondeur du noeud B (on prendra la profondeur de la racine égale à 0).
+>
+>8) Donnez la hauteur de cet arbre (on prendra la profondeur de la racine égale à 0).
 
 ## 3) les arbres binaires de recherche 
 
