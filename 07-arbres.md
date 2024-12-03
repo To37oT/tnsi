@@ -108,7 +108,7 @@ Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirm
 
 ![image](https://github.com/user-attachments/assets/bdb1edba-3030-4411-81fa-fd305be4f103)
 
-avec **n** la taille de l'arbre et **h** la hauteur de l'arbre.
+avec **n** la taille de l'arbre et **h** la hauteur de l'arbre. Dans le second cas, il faudra arrondir log<sub>2</sub>(n) à l'entier inférieur.
 
 ### e) les arbres binaires en Python
 
