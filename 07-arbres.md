@@ -16,10 +16,10 @@ Au départ nous avons 4 poules de 4 équipes. Les 4 équipes d'une poule s'affro
 
 Dans ce qui suit, on désigne les 2 qualifiés par poule par :
 
-- Poule 1 => 1er = **Eq1** | 2e = **Eq8**
-- Poule 2 => 1er = **Eq2** | 2e = **Eq7**
-- Poule 3 => 1er = **Eq3** | 2e = **Eq6**
-- Poule 4 => 1er = **Eq4** | 2e = **Eq5**
+- Poule 1 => 1er = **Eq1** et 2e = **Eq8**
+- Poule 2 => 1er = **Eq2** et 2e = **Eq7**
+- Poule 3 => 1er = **Eq3** et 2e = **Eq6**
+- Poule 4 => 1er = **Eq4** et 2e = **Eq5**
 
 En quart de final, on va avoir :
 
@@ -76,7 +76,7 @@ Soit l'arbre binaire suivant :
 - Un arbre (ou un sous-arbre) vide est noté **NIL** (NIL est une abréviation du latin nihil qui veut dire "rien"). Par exemple, le sous-arbre gauche du noeud D est NIL (même chose pour son sous-arbre droit d'ailleurs puisque D est une feuille).
 - On appelle **arête** le segment qui relie 2 noeuds.
 - On appelle **taille** d'un arbre le nombre de noeuds présents dans cet arbre
-- On appelle **profondeur** d'un noeud ou d'une feuille dans un arbre binaire le nombre de noeud du chemin qui va de la racine à ce noeud. 
+- On appelle **profondeur** d'un noeud ou d'une feuille dans un arbre binaire le nombre de noeud du chemin qui va de la racine à ce noeud.
 _ATTENTION : la racine peut être initialisé à une profondeur de 0 ou 1, cela vous sera toujours précisé. Par exemple, la profondeur de B est 1 si la racine est à 0, la profondeur de B est 2 si la racine est à une profondeur de 1._
 - On appelle **hauteur** d'un arbre la profondeur maximale des noeud de l'arbre. Exemple : la profondeur de P = 5, c'est un des noeuds les plus profond, donc la hauteur de l'arbre est de 5.
 _ATTENTION : comme pour la profondeur, on trouvera 2 approches différentes pour le calcul de la hauteur. Ici la hauteur de l'arbre est 5 si la racine est à 1, 4 si la racine est à 0._
@@ -93,9 +93,9 @@ Il est possible d'avoir des arbres binaires de même taille, mais de "forme" tr�
 
 Sur le schéma ci-dessus l'arbre 1 est dit **filiforme** alors que l'arbre 2 est dit **complet** (on dira qu'un arbre binaire est complet si tous les noeuds possèdent 2 fils et que toutes les feuilles se situent à la même profondeur).
 
-Si on prend un arbre filiforme de taille ```n```, on peut dire que la hauteur de cet arbre est égale à ```n``` (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 1)
+Si on prend un arbre filiforme de taille **n**, on peut dire que la hauteur de cet arbre est égale à **n** (si on prend la définition de la hauteur d'un arbre où la racine a une profondeur 1)
 
-Si on prend un arbre complet de taille ```n```, on peut démontrer que la hauteur de cet arbre est égale à ```log<sub>2</sub>(n+1)```. Dans le cas de l'arbre 2, nous avons ```log<sub>2</sub>(8)=3``` nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
+Si on prend un arbre complet de taille **n** on peut démontrer que la hauteur de cet arbre est égale à **log<sub>2</sub>(n+1)**. Dans le cas de l'arbre 2, nous avons log<sub>2</sub>(8)=3 nous avons bien la hauteur de l'arbre 2 égale à 3 (si on prend la définition de la taille d'un arbre où la racine a une profondeur 1).
 
 Rappels sur les logarithmes (regarder jusqu'à 4'25, tenter de faire les exercices) :
 
@@ -108,7 +108,7 @@ Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirm
 
 ![image](https://github.com/user-attachments/assets/bdb1edba-3030-4411-81fa-fd305be4f103)
 
-avec ```n``` la taille de l'arbre et ```h``` la hauteur de l'arbre.
+avec **n** la taille de l'arbre et **h** la hauteur de l'arbre.
 
 ### e) les arbres binaires en Python
 
@@ -141,12 +141,28 @@ Un arbre binaire de recherche est un cas particulier d'arbre binaire. Pour avoir
 
 - il faut avoir un arbre binaire
 - il faut que les clés de noeuds composant l'arbre soient ordonnables (on doit pouvoir classer les noeuds, par exemple, de la plus petite clé à la plus grande)
-- soit x un noeud d'un arbre binaire de recherche. Si y est un noeud du sous-arbre gauche de x, alors il faut que y.clé ⩽ x.clé. Si y est un noeud du sous-arbre droit de x, il faut alors que x.clé ⩽ y.clé
+- soit **x** un noeud d'un arbre binaire de recherche. Si **y** est un noeud du sous-arbre gauche de **x** alors il faut que **y.clé ⩽ x.clé**. Si **y** est un noeud du sous-arbre droit de **x** il faut alors que **x.clé ⩽ y.clé**.
 
 exemple d'arbre binaire de recherche :
 
-![](img/nsi_term_arbre_5.jpg)
+![nsi_term_arbre_5](https://github.com/user-attachments/assets/90a1ef56-e903-4ff5-ba39-16866917f074)
 
 Vous pouvez vérifier que le fils gauche d'un noeud a une valeur plus petite que son père (par exemple 3 < 6) et que le fils droit d'un noeud a une valeur plus grande que son père (par exemple 7 > 6)
 
 Attention : pour un noeud donné A, tous les noeuds de l'arbre gauche de A auront des valeurs plus petites que la valeur du noeud A et tous les noeuds de l'arbre droit de A auront des valeurs plus grandes que la valeur du noeud A. 
+
+
+##### Exercice 2
+>
+>![c7a_2](https://github.com/user-attachments/assets/f77aa55a-0b07-4a1a-b29c-494d5c94912e)
+>
+>1) Expliquez pourquoi cet arbre binaire n'est pas un arbre binaire de recherche.
+>
+>2) Modifiez cet arbre pour le transformer en arbre binaire de recherche.
+<
+
+##### Exercice 3
+>
+>Soit les valeurs suivantes : 14, 22, 8, 47, 42, 13, 1, 24, 33, 74.
+>
+>Construisez un arbre binaire de recherche à partir de ces valeurs. 
