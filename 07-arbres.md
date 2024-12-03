@@ -110,7 +110,7 @@ Un arbre filiforme et un arbre complet étant deux cas extrêmes, on peut affirm
 
 avec **n** la taille de l'arbre et **h** la hauteur de l'arbre. Dans le second cas, il faudra arrondir log<sub>2</sub>(n) à l'entier inférieur.
 
-### e) les arbres binaires en Python
+### e) Les arbres binaires en Python
 
 Python ne propose pas de façon native l'implémentation des arbres binaires. Mais nous aurons, plus tard dans l'année, l'occasion d'implémenter des arbres binaires en Python en utilisant la programmation orientée objet.
 
@@ -135,7 +135,7 @@ Python ne propose pas de façon native l'implémentation des arbres binaires. Ma
 >
 >8) Donnez la hauteur de cet arbre (on prendra la profondeur de la racine égale à 0).
 
-## 3) les arbres binaires de recherche 
+## 3) Les arbres binaires de recherche 
 
 Un arbre binaire de recherche est un cas particulier d'arbre binaire. Pour avoir un arbre binaire de recherche :
 
@@ -143,7 +143,7 @@ Un arbre binaire de recherche est un cas particulier d'arbre binaire. Pour avoir
 - il faut que les clés de noeuds composant l'arbre soient ordonnables (on doit pouvoir classer les noeuds, par exemple, de la plus petite clé à la plus grande)
 - soit **x** un noeud d'un arbre binaire de recherche. Si **y** est un noeud du sous-arbre gauche de **x** alors il faut que **y.clé ⩽ x.clé**. Si **y** est un noeud du sous-arbre droit de **x** il faut alors que **x.clé ⩽ y.clé**.
 
-exemple d'arbre binaire de recherche :
+Exemple d'arbre binaire de recherche :
 
 ![nsi_term_arbre_5](https://github.com/user-attachments/assets/90a1ef56-e903-4ff5-ba39-16866917f074)
 
