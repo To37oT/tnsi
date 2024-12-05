@@ -1,26 +1,26 @@
 ---
 layout: default
-title: Chapitre 8 - Algorithmes sur les arbres
+title: Chapitre 8 - Algorithmes sur les arbres binaires
 permalink: /08-algo-arbres/
 published: true
 date: 2024
 ---
 
-# Algorithmes sur les arbres
+# Algorithmes sur les arbres binaires
 
 ## 1) notations utilisées
 
 Dans ce chapitre nous allons utiliser les notations suivantes :
 
-Soit un arbre T : T.racine correspond au noeud racine de l'arbre T
+Soit un arbre T : ```T.racine``` correspond au noeud racine de l'arbre T
 
 Soit un noeud x :
 
-- x.gauche correspond au sous-arbre gauche du noeud x
-- x.droit correspond au sous-arbre droit du noeud x
-- x.clé correspond à la clé du noeud x
+- ```x.gauche``` correspond au sous-arbre gauche du noeud x
+- ```x.droit``` correspond au sous-arbre droit du noeud x
+- ```x.clé``` correspond à la clé du noeud x
 
-Il faut noter que si le noeud x est une feuille, x.gauche et x.droite sont des arbres vides (NIL)
+Il faut noter que si le noeud x est une feuille, ```x.gauche``` et ```x.droite``` sont des arbres vides (NIL)
 
 ## 2) calculer la hauteur d'un arbre
 
