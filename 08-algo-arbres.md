@@ -1,3 +1,13 @@
+---
+layout: default
+title: Chapitre 8 - Algorithmes sur les arbres
+permalink: /08-algo-arbres/
+published: true
+date: 2024
+---
+
+# Algorithmes sur les arbres
+
 ## 1) notations utilisées
 
 Dans ce chapitre nous allons utiliser les notations suivantes :
