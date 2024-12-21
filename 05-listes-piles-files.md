@@ -325,13 +325,13 @@ Nous avons ici des fonctions permettant de simuler une liste.
 >
 >Python propose une implémentation des piles.
 >
->Après avoir étudié la documentation consacrée à l'implémentation des piles en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-stacks){:target="_blank"} partie 5.1.1), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'activité 5.3 étaient correctes.
+>Après avoir étudié la documentation consacrée à l'implémentation des piles en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-stacks){:target="_blank"} partie 5.1.1), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'exercice 2 étaient correctes.
 
 ##### Exercice 8
 >
 >Python propose une implémentation des files.
 >
->Après avoir étudié la documentation consacrée à l'implémentation des files en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-queues){:target="_blank"} partie 5.1.2), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'activité 5.5 étaient correctes.
+>Après avoir étudié la documentation consacrée à l'implémentation des files en Python (voir [https://docs.python.org/fr/3/tutorial/datastructures.html](https://docs.python.org/fr/3/tutorial/datastructures.html#using-lists-as-queues){:target="_blank"} partie 5.1.2), vous écrirez un programme permettant de vérifier que les réponses que vous avez apportées à l'exercice 3 étaient correctes.
 
 ##### Exercice 9
 >
