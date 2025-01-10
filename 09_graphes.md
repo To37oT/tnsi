@@ -27,6 +27,17 @@ Voici ce que cela donne avec le réseau social décrit ci-dessus :
 
 ![c9c_1](https://github.com/user-attachments/assets/008be603-bfbf-4216-aa13-0a8553c362d6)
 
+##### Exercice 1
+>
+>Construisez un graphe de réseau social à partir des informations suivantes :
+>
+>- A est ami avec B et E
+>- B est ami avec A et C
+>- C est ami avec B,F et D
+>- D est ami avec C,F et E
+>- E est ami avec A,D et F
+>- F est ami avec C, D et E
+
 ## 2) notion de graphes
 
 Ce genre de figure s'appelle **un graphe**. Les graphes sont des objets mathématiques très utilisés, notamment en informatique. Les cercles sont appelés **des sommets** et les segments de droites qui relient 2 sommets **des arêtes**.
@@ -115,6 +126,12 @@ Il faut savoir qu'à chaque ligne correspond un sommet du graphe et qu'à chaque
 - Il existe une arête entre le sommet E et le sommet F, nous avons donc placé un 1 à l'intersection de la ligne E et de la colonne F (il en est de même à l'intersection de la ligne F et de la colonne E)
 - Il n'existe pas d'arête entre le sommet D et le sommet C, nous avons donc placé un 0 à l'intersection de la ligne D et de la colonne C (il en est de même à l'intersection de la ligne C et de la colonne D)
 
+##### Exercice 2
+>
+>Soit le graphe suivant :
+>![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
+>Déterminez sa matrice d'adjacence.
+
 Il est aussi possible d'établir une matrice d'adjacence pour un graphe orienté. Le principe reste le même : si le sommet i (ligne) est lié au sommet j (colonne), nous avons un 1 à l'intersection (0 dans le cas contraire).
 
 ![c9c_3](https://github.com/user-attachments/assets/b6b785a7-d08c-41da-aa16-9060d1d3c016)
@@ -152,6 +169,11 @@ Voici la liste d'adjacence de ce graphe :
 
 ![c9c_11](https://github.com/user-attachments/assets/20f34a9c-c5af-41db-bf75-f73ec1c9ee51)
 
+##### Exercice 3
+>
+>Établissez la liste d'adjacence du graphe ci-dessous.
+>![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
+
 Pour les graphes orientés, il est nécessaire de définir 2 listes : la liste des **successeurs** et la liste des **prédécesseurs**. Soit un arc allant d'un sommet A vers un sommet B (flèche de A vers B). On dira que B est un successeur de A et que A est un prédécesseur de B.
 
 ![c9c_3](https://github.com/user-attachments/assets/09f41337-6728-4617-be4e-b419500a05de)
@@ -170,6 +192,26 @@ Il est possible de travailler avec des listes d'adjacences en Python en utilisan
 #liste d'ajacence
 l = {'A':('B','C','D'), 'B':('A', 'E', 'F', 'G'), 'C':('A'), 'D':('A', 'G'), 'E':('B', 'F'), 'F':('B', 'E'), 'G':('B', 'D')}
 ```
+
+##### Exercice 4
+>
+>Soit la matrice d'adjacence d'un graphe G composé des sommets A, B, C, D  :
+>
+>![c9a_2](https://github.com/user-attachments/assets/1749d035-a335-4bd1-aa45-a0ee67161ade)
+>
+>- le graphe G est-il orienté ou non-orienté ? Justifiez votre réponse.
+>
+>- représentez ce graphe G
+
+##### Exercice 4
+>
+>Soit G un graphe non-orienté implémenté en Python comme suit :
+>
+>```python
+>G = {'A':['B', 'C', 'E'], 'B':['A', 'E'], 'C':['A','D'], 'D':['C'], 'E':['A','B']}
+>```
+>Représentez le graphe G.
+
 ### c) matrice d'adjacence ou liste d'adjacence ?
 
 Comment choisir l'implémentation à utiliser (matrice d'adjacence ou liste d'adjacence) ?
