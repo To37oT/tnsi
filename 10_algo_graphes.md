@@ -10,13 +10,12 @@ date: 2024
 
 ## 1) algorithmes de parcours d'un graphe
 
-
-Nous allons commencer par nous intéresser aux algorithmes de parcours d'un graphe. L'idée du "parcours" est de "visiter" tous les sommets d'un graphe en partant d'un sommet quelconque. Ces algorithmes de parcours d'un graphe sont à la base de nombreux algorithmes très utilisés : routage des paquets de données dans un réseau, découverte du chemin le plus court pour aller d'une ville à une autre...
+Nous allons commencer par nous intéresser aux algorithmes de parcours d'un graphe. L'idée du "parcours" est de visiter tous les sommets d'un graphe en partant d'un sommet quelconque. Ces algorithmes de parcours d'un graphe sont à la base de nombreux algorithmes très utilisés : routage des paquets de données dans un réseau, découverte du chemin le plus court pour aller d'une ville à une autre...
 
 Il existe 2 méthodes pour parcourir un graphe :
 
-- le parcours en largeur d'abord
-- le parcours en profondeur d'abord
+- **le parcours en largeur d'abord**
+- **le parcours en profondeur d'abord**
 
 ### a) préalable
 
@@ -55,15 +54,15 @@ FIN
 
 Si on applique cet algorithme sur le graphe G ci-dessous : 
 
-![](img/c10c_1.jpg)
+![c10c_1](https://github.com/user-attachments/assets/dacc1eca-2dda-4521-9252-cde2039f9631)
 
-si on part du sommet A (sommet s dans l'algorithme) la "découverte" peut se faire dans l'ordre suivant :  A, B, F, C, D, G, H, E et I (ATTENTION ce n'est pas la seule solution possible, par exemple A, F, B, D, C, G, H, I et E est aussi possible (il y a bien d'autres possibilités)).
+Si on part du sommet A (sommet s dans l'algorithme) la découverte peut se faire dans l'ordre suivant :  A, B, F, C, D, G, H, E et I (ATTENTION ce n'est pas la seule solution possible, par exemple A, F, B, D, C, G, H, I et E est aussi possible (il y a bien d'autres possibilités)).
 
-Vous avez sans doute remarqué que dans le cas d'un parcours en largeur d'abord, on "découvre" d'abord tous les sommets situés à une distance k du sommet "origine" (sommet s) avant de commencer la découverte des sommets situés à une distance k+1 (on définit la distance comme étant le nombre d'arêtes à parcourir depuis A pour arriver à destination):
+Vous avez sans doute remarqué que dans le cas d'un parcours en largeur d'abord, on découvre d'abord tous les sommets situés à une distance k du sommet origine (sommet s) avant de commencer la découverte des sommets situés à une distance k+1 (on définit la distance comme étant le nombre d'arêtes à parcourir depuis A pour arriver à destination).
 
 En effet, pour l'exemple ci-dessus, nous avons bien : 
 
-![](img/c10c_2.png)
+![c10c_2](https://github.com/user-attachments/assets/71bed935-2d4b-41f9-a6f6-74bb16b62d5d)
 
 ### c) le parcours en profondeur d'abord
 
@@ -89,11 +88,11 @@ Vous avez dû remarquer que le parcours en profondeur utilise une fonction récu
 
 Si on applique cet algorithme sur le graphe G ci-dessous : 
 
-![](img/c10c_1.jpg)
+![c10c_1](https://github.com/user-attachments/assets/b4b576f4-868c-4331-a72c-69eda91e8441)
 
 en partant du sommet A la "découverte" peut se faire dans l'ordre suivant :  A, B, C, E, I, D, G, F et H (ATTENTION, ici aussi, ce n'est pas la seule solution possible : A, F, H, I, E, C, B, D et G est aussi une solution possible (il y a bien d'autres possibilités)).
 
-Dans le cas du parcours en largeur d'abord on "découvrait" tous les sommets situés à une distance k de l'origine avant de s'intéresser aux sommets situés à une distance k+1 de l'origine. Dans le cas du parcours en profondeur, on va chercher à aller "le plus loin possible" dans le graphe : A -> B -> C -> E -> I -> D, quand on tombe sur "un cul-de-sac" (dans notre exemple, D est un "cul-de-sac", car une fois en D, on peut uniquement aller en B, or, B a déjà été découvert...), on revient "en arrière" (dans notre exemple, on repart de B pour aller explorer une autre branche : G -> F -> H)
+Dans le cas du parcours en largeur d'abord on découvrait tous les sommets situés à une distance k de l'origine avant de s'intéresser aux sommets situés à une distance k+1 de l'origine. Dans le cas du parcours en profondeur, on va chercher à aller le plus loin possible dans le graphe : A -> B -> C -> E -> I -> D, quand on tombe sur un cul-de-sac (dans notre exemple, D est un cul-de-sac, car une fois en D, on peut uniquement aller en B, or, B a déjà été découvert...), on revient en arrière (dans notre exemple, on repart de B pour aller explorer une autre branche : G -> F -> H)
 
 À noter que l'utilisation d'un algorithme récursif n'est pas une obligation pour le parcours en profondeur :
 
