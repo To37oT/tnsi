@@ -64,6 +64,13 @@ En effet, pour l'exemple ci-dessus, nous avons bien :
 
 ![c10c_2](https://github.com/user-attachments/assets/71bed935-2d4b-41f9-a6f6-74bb16b62d5d)
 
+##### Exercice 1
+>
+>Appliquez l'algorithme du parcours en largeur d'abord au graphe ci-dessous. Le 'point de départ' de notre parcours sera le sommet A. Vous noterez les sommets atteints à chaque étape ainsi que les sommets présents dans la file f. Vous pourrez aussi, à chaque étape, donner les changements de couleur des sommets.
+>
+>![c10a_1](https://github.com/user-attachments/assets/96aa0e86-f55b-4237-aa07-4f13de0e05e0)
+
+
 ### c) le parcours en profondeur d'abord
 
 L'algorithme ci-dessous permet de parcourir un graphe en profondeur d'abord :
@@ -119,6 +126,12 @@ FIN
 ```
 Vous avez sans doute remarqué que la version "non récursive" (on dit "itérative") de l'algorithme du parcours en profondeur ressemble beaucoup à l'algorithme du parcours en largeur. Il y a tout de même une différence à bien noter : la file est remplacée par une pile
 
+##### Exercice 2
+>
+>Appliquez l'algorithme du parcours en profondeur d'abord au graphe ci-dessous (d'abord avec l'algorithme récursif puis ensuite avec l'algorithme non récursif). Le 'point de départ' de notre parcours sera le sommet A. Vous noterez les sommets atteints à chaque étape ainsi que les sommets présents dans la pile p. Vous pourrez aussi, à chaque étape, donner les changements de couleur des sommets.
+>
+>![c10a_1](https://github.com/user-attachments/assets/96aa0e86-f55b-4237-aa07-4f13de0e05e0)
+
 ## 2) cycle dans  les graphes
 
 Voici un rappel de 2 définitions vues précédemment :
@@ -157,6 +170,19 @@ CYCLE():
     renvoie Faux
 FIN
 ```
+
+##### Exercice 3
+>
+>Appliquez l'algorithme de détection d'un cycle au graphe ci-dessous (vous partirez du sommet de votre choix).
+>
+>![c10a_2](https://github.com/user-attachments/assets/095f4f56-17b2-444d-88af-4026c5fa4e4a)
+
+##### Exercice 4
+>
+>Appliquez l'algorithme de détection d'un cycle au graphe ci-dessous (vous partirez du sommet de votre choix).
+>
+>![c10a_3](https://github.com/user-attachments/assets/a4b20107-cd6e-4e58-b2de-1f3906f841d4)
+
 ## 3) Chercher une chaine dans un graphe
 
 Nous allons maintenant nous intéresser à un algorithme qui permet de trouver une chaine entre 2 sommets (sommet de départ et sommet d'arrivée). Les algorithmes de ce type ont une grande importance et sont très souvent utilisés).
@@ -188,6 +214,13 @@ FIN
 ```
 
 Vous noterez que l'algorithme ci-dessus est basé sur un parcours en profondeur d'abord.
+
+##### Exercice 5
+>
+>Appliquez l'algorithme permettant de trouver une chaine entre un noeud de départ (start) et un noeud d'arrivée (end) au graphe ci-dessous (vous choisirez les noeuds de départ et d'arrivée de votre choix).
+>
+>![c10a_1](https://github.com/user-attachments/assets/26e998ac-901f-4aba-ae03-60ebcb2550ed)
+
 
 ## 4) pour aller plus  loin...
 
