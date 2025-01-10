@@ -203,7 +203,7 @@ l = {'A':('B','C','D'), 'B':('A', 'E', 'F', 'G'), 'C':('A'), 'D':('A', 'G'), 'E'
 >
 >- représentez ce graphe G
 
-##### Exercice 4
+##### Exercice 5
 >
 >Soit G un graphe non-orienté implémenté en Python comme suit :
 >
