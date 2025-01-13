@@ -24,6 +24,8 @@ Nous allons travailler sur un graphe G(V,E) avec V l'ensemble des sommets de ce 
 - si u.couleur = blanc => u n'a pas encore été "découvert"
 - si u.couleur = noir => u a été "découvert"
 
+![image](https://github.com/user-attachments/assets/eba5c304-e187-470f-8d17-62172dce4ebb)
+
 ### b) le parcours en largeur d'abord
 
 L'algorithme ci-dessous permet de parcourir un graphe en largeur d'abord :
