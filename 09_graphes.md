@@ -27,6 +27,12 @@ Voici ce que cela donne avec le réseau social décrit ci-dessus :
 
 ![c9c_1](https://github.com/user-attachments/assets/008be603-bfbf-4216-aa13-0a8553c362d6)
 
+## 2) notion de graphes
+
+Ce genre de figure s'appelle **un graphe**. Les graphes sont des objets mathématiques très utilisés, notamment en informatique. Les cercles sont appelés **des sommets** et les segments de droites qui relient 2 sommets **des arêtes**.
+
+Plus formellement on dira qu'un graphe G est un couple G = (V,E) avec V un ensemble de sommets et E un ensemble d'arêtes.
+
 ##### Exercice 1
 >
 >Construisez un graphe de réseau social à partir des informations suivantes :
@@ -37,12 +43,6 @@ Voici ce que cela donne avec le réseau social décrit ci-dessus :
 >- D est ami avec C,F et E
 >- E est ami avec A,D et F
 >- F est ami avec C, D et E
-
-## 2) notion de graphes
-
-Ce genre de figure s'appelle **un graphe**. Les graphes sont des objets mathématiques très utilisés, notamment en informatique. Les cercles sont appelés **des sommets** et les segments de droites qui relient 2 sommets **des arêtes**.
-
-Plus formellement on dira qu'un graphe G est un couple G = (V,E) avec V un ensemble de sommets et E un ensemble d'arêtes.
 
 Autre utilisation possible des graphes : les logiciels de cartographie (ces logiciels sont souvent utilisés couplés à des récepteurs GPS). Ces logiciels de cartographie permettent, connaissant votre position grâce à un récepteur GPS, d'indiquer la route à suivre pour se rendre à un endroit B. Comment modéliser l'ensemble des lieux et des routes ? Simplement à l'aide d'un graphe ! Chaque lieu est un sommet et les routes qui relient les lieux entre eux sont des arêtes.
 
@@ -126,12 +126,6 @@ Il faut savoir qu'à chaque ligne correspond un sommet du graphe et qu'à chaque
 - Il existe une arête entre le sommet E et le sommet F, nous avons donc placé un 1 à l'intersection de la ligne E et de la colonne F (il en est de même à l'intersection de la ligne F et de la colonne E)
 - Il n'existe pas d'arête entre le sommet D et le sommet C, nous avons donc placé un 0 à l'intersection de la ligne D et de la colonne C (il en est de même à l'intersection de la ligne C et de la colonne D)
 
-##### Exercice 2
->
->Soit le graphe suivant :
->![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
->Déterminez sa matrice d'adjacence.
-
 Il est aussi possible d'établir une matrice d'adjacence pour un graphe orienté. Le principe reste le même : si le sommet i (ligne) est lié au sommet j (colonne), nous avons un 1 à l'intersection (0 dans le cas contraire).
 
 ![c9c_3](https://github.com/user-attachments/assets/b6b785a7-d08c-41da-aa16-9060d1d3c016)
@@ -157,6 +151,15 @@ m = [[0, 1, 1, 1, 0, 0, 0],
      [0, 1, 0, 1, 0, 0, 0]]
 
 ```
+
+##### Exercice 2
+>
+>Soit le graphe suivant :
+>
+>![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
+>
+>Déterminez sa matrice d'adjacence.
+
 ### b) implémentation d'un graphe à l'aide de listes d'adjacence
 
 Pour commencer, on définit une liste des sommets du graphe. À chaque élément de cette liste, on associe une autre liste qui contient les sommets lié à cet élément :
@@ -168,11 +171,6 @@ Reprenons l'exemple du "graphe cartographie" :
 Voici la liste d'adjacence de ce graphe :
 
 ![c9c_11](https://github.com/user-attachments/assets/20f34a9c-c5af-41db-bf75-f73ec1c9ee51)
-
-##### Exercice 3
->
->Établissez la liste d'adjacence du graphe ci-dessous.
->![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
 
 Pour les graphes orientés, il est nécessaire de définir 2 listes : la liste des **successeurs** et la liste des **prédécesseurs**. Soit un arc allant d'un sommet A vers un sommet B (flèche de A vers B). On dira que B est un successeur de A et que A est un prédécesseur de B.
 
@@ -193,6 +191,20 @@ Il est possible de travailler avec des listes d'adjacences en Python en utilisan
 l = {'A':('B','C','D'), 'B':('A', 'E', 'F', 'G'), 'C':('A'), 'D':('A', 'G'), 'E':('B', 'F'), 'F':('B', 'E'), 'G':('B', 'D')}
 ```
 
+##### Exercice 3
+>
+>Établissez la liste d'adjacence du graphe ci-dessous.
+>
+>![c9a_1](https://github.com/user-attachments/assets/98925320-7a92-4198-b776-22621ad8719c)
+
+### c) matrice d'adjacence ou liste d'adjacence ?
+
+Comment choisir l'implémentation à utiliser (matrice d'adjacence ou liste d'adjacence) ?
+
+- le choix se fait en fonction de la densité du graphe, c'est-à-dire du rapport entre le nombre d'arêtes et le nombre de sommets. Pour un graphe dense on utilisera plutôt une matrice d'adjacence.
+- certains algorithmes travaillent plutôt avec les listes d'adjacences alors que d'autres travaillent plutôt avec les matrices d'adjacences. Le choix doit donc aussi dépendre des algorithmes utilisés (nous aurons très prochainement l'occasion d'étudier plusieurs de ces algorithmes).
+
+
 ##### Exercice 4
 >
 >Soit la matrice d'adjacence d'un graphe G composé des sommets A, B, C, D  :
@@ -212,10 +224,3 @@ l = {'A':('B','C','D'), 'B':('A', 'E', 'F', 'G'), 'C':('A'), 'D':('A', 'G'), 'E'
 >```
 >Représentez le graphe G.
 
-### c) matrice d'adjacence ou liste d'adjacence ?
-
-Comment choisir l'implémentation à utiliser (matrice d'adjacence ou liste d'adjacence) ?
-
-- le choix se fait en fonction de la densité du graphe, c'est-à-dire du rapport entre le nombre d'arêtes et le nombre de sommets. Pour un graphe dense on utilisera plutôt une matrice d'adjacence.
-- certains algorithmes travaillent plutôt avec les listes d'adjacences alors que d'autres travaillent plutôt avec les matrices d'adjacences. Le choix doit donc aussi dépendre des algorithmes utilisés (nous aurons très prochainement l'occasion d'étudier plusieurs de ces algorithmes).
-  
