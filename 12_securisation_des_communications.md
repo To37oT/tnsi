@@ -15,7 +15,7 @@ Soit 2 individus A et B qui cherchent à s'envoyer des messages par l'intermédi
 Pour ce faire, A va chiffrer le message . Toute personne qui ne possédera pas le moyen de déchiffrer ce message chiffré se verra dans l'impossibilité de comprendre le contenu du message (si P intercepte le message chiffré et qu'il ne possède pas le moyen de déchiffrer ce message, l'interception aura été totalement inutile puisque P sera dans l'incapacité de comprendre le contenu du message). 
 
 ##### Activité
-Il faut savoir que l'idée de chiffrer des messages (de les rendre illisibles pour des personnes non autorisées) ne date pas du début de l'ère de l'informatique. En effet, dès l'antiquité, on cherchait déjà à sécuriser les communications en chiffrant les messages sensible.
+>Il faut savoir que l'idée de chiffrer des messages (de les rendre illisibles pour des personnes non autorisées) ne date pas du début de l'ère de l'informatique. En effet, dès l'antiquité, on cherchait déjà à sécuriser les communications en chiffrant les messages sensible.
 >On trouve les origine de la cryptographie dans la Grèce antique. Faites  une  frise  chronologique  qui  reprend  les  principales  dates  de  l'histoire  de  cette  science (une dizaine de dates).
 >
 >Entrez un peu plus dans les détails pour les éléments suivant :
