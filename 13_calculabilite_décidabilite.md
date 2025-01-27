@@ -62,4 +62,7 @@ Cette idée d'avoir un problème (problème de l'arrêt) qui ne peut pas être r
 
 Nous venons de voir qu'un algorithme peut permettre de résoudre des problèmes (par exemple répondre à une question par oui ou non), à condition que le problème soit décidable. Un algorithme peut aussi réaliser des calculs et donner un résultat. Un algorithme peut donc aussi calculer l'image d'une valeur x par une fonction f (si on prend une fonction f telle que f(x)=5x+3, il est aisé de programmer un algorithme qui donnera l'image de x par f quel que soit x). Pourtant Church et Turing ont démontré que pour certaines fonctions il n'existait pas d'algorithme capable de calculer l'image de x. Ces fonctions sont dites **non-calculables**. Attention, ce n'est pas parce qu'une fonction f n'est pas calculable qu'il n'est possible de trouver l'image de x par f. Cela veut juste dire qu'il n'existe pas d'algorithme capable d'effectuer ce calcul. Au contraire, s'il existe un algorithme capable de calculer l'image de x par une fonction f, alors cette fonction f est dite **calculable**.
 
-Les notions de décidabilité et de calculabilité sont étroitement liées, mais cela sort du cadre de ce cours.
+### 2 vidéos pour mieux comprendre le problème de l'arrêt (en anglais)
+
+- [Vidéo 1](https://www.youtube.com/watch?v=t37GQgUPa6){target=_blank}
+- [Vidéo 2](https://www.youtube.com/watch?v=92WHN-pAFCs&t=453s){target=_blank}
