@@ -64,5 +64,5 @@ Nous venons de voir qu'un algorithme peut permettre de résoudre des problèmes 
 
 ### 2 vidéos pour mieux comprendre le problème de l'arrêt (en anglais)
 
-- [Vidéo 1](https://www.youtube.com/watch?v=t37GQgUPa6){target=_blank}
-- [Vidéo 2](https://www.youtube.com/watch?v=92WHN-pAFCs&t=453s){target=_blank}
+- [Vidéo 1](https://www.youtube.com/watch?v=t37GQgUPa6){:target="_blank"}
+- [Vidéo 2](https://www.youtube.com/watch?v=92WHN-pAFCs&t=453s){:target="_blank"}
