@@ -6,8 +6,6 @@ published: true
 date: 2024
 ---
 
-![Enregistrement-de-l_écran-2025-01-29-153451](https://github.com/user-attachments/assets/73784af7-e843-4916-949c-338de7bf1395)
-
 # paradigmes de programmation
 
 ## 1) introduction
@@ -166,19 +164,20 @@ Comme pour une variable nous pouvons afficher la valeur référencée par un att
 
 Définir les attributs en dehors d'une classe n'est pas une bonne pratique, en effet, nous ne respectons pas un principe de base de la POO : **l'encapsulation**
 
-Il ne faut pas oublier que notre classe doit être "enfermée dans une caisse" pour que l'utilisateur puisse l'utiliser facilement sans se préoccuper de ce qui se passe à l'intérieur, or, ici, ce n'est pas vraiment le cas.
+Il ne faut pas oublier que notre classe doit être enfermée dans une boîte pour que l'utilisateur puisse l'utiliser facilement sans se préoccuper de ce qui se passe à l'intérieur, or, ici, ce n'est pas vraiment le cas.
 
-En effet, les attributs (gollum.vie et bilbo.vie), font partie de la classe et devraient donc être enfermés dans la "caisse" !
+En effet, les attributs (gollum.vie et bilbo.vie), font partie de la classe et devraient donc être enfermés dans la boîte.
 
-Pour résoudre ce problème, nous allons définir les attributs, dans la classe, à l'aide d'une méthode (une méthode est une fonction définie dans une classe) d'initialisation des attributs.
+Pour résoudre ce problème, nous allons définir les attributs dans la classe à l'aide d'une méthode (une méthode est une fonction définie dans une classe) d'initialisation des attributs.
 
 Cette méthode est définie dans le code source par la ligne :
 
 ```python
 def __init__ (self)
+  ...
 ```
 
-La méthode *init* est automatiquement exécutée au moment de la création d'une instance. Le mot self est obligatoirement le premier argument d'une méthode (nous reviendrons ci-dessous sur ce mot self)
+La méthode ```init``` est automatiquement exécutée au moment de la création d'une instance. **Le mot self est obligatoirement le premier argument d'une méthode**.
 
 Nous retrouvons ce mot self lors de la définition des attributs. La définition des attributs sera de la forme :
 
@@ -196,9 +195,9 @@ class Personnage:
     self.vie=20
 ```
 
-Ensuite lors de la création de l'instance gollum, python va automatiquement remplacer self par gollum et ainsi créer un attribut gollum.vie qui aura pour valeur de départ la valeur donnée à self.vie dans la méthode *init*
+Ensuite lors de la création de l'instance gollum, python va automatiquement remplacer self par gollum et ainsi créer un attribut ```gollum.vie``` qui aura pour valeur de départ la valeur donnée à self.vie dans la méthode ```init```
 
-Il se passera exactement la même chose au moment de la création de l'instance bilbo, on aura automatiquement la création de l'attribut bilbo.vie.
+Il se passera exactement la même chose au moment de la création de l'instance bilbo, on aura automatiquement la création de l'attribut ```bilbo.vie```.
 
 Si nous saisissons le programme suivant :
 
@@ -206,22 +205,37 @@ Si nous saisissons le programme suivant :
 class Personnage:
   def __init__(self):
     self.vie=20
+
 gollum=Personnage()
 bilbo=Personnage()
 ```
 
-et que nous tapons dans la console Python *gollum.vie*, nous obtiendrons bien 20.
+et que nous affichons ```gollum.vie```, nous obtiendrons bien ```20```.
 
-Au moment de la création de l'instance gollum, on passe comme argument le nombre de vies (gollum=Personnage (20)). Ce nombre de vies est attribué au premier argument de la méthode __init__ , la variable nbreDeVie (nbreDeVie n'est pas tout à fait le premier argument de la méthode __init__ puisque devant il y a self, mais bon, self étant obligatoire, nous pouvons dire que nbreDeVie est le premier argument non obligatoire).
+Nous pouvons passer des arguments à la méthode ```init``` (comme pour n'importe quelle fonction).
 
-N.B. Je parle bien de variable pour nbreDeVie (car ce n'est pas un attribut de la classe personnage puisqu'elle ne commence pas par self).
+```python
+class Personnage:
+  def __init__(self, nbreDeVie):
+    self.vie=nbreDeVie
 
-Nous pouvons passer plusieurs arguments à la méthode __init__ (comme pour n'importe quelle fonction).
+gollum = Personnage(20)
+bilbo = Personnage(15)
+```
 
+La valeur est attribuée au premier argument de la méthode init (en dehors de self)
+
+SYNTHESE VOCABULAIRE
+
+- Personnage = classe
+- def __init__ = méthode
+- self.vie = attribut
+- nbreDeVie = variable
+- gollum = instance
+  
 Nous allons créer 2 nouvelles méthodes :
 
 - Une méthode qui enlèvera un point de vie au personnage blessé
-
 - Une méthode qui renverra le nombre de vies restantes
 
 Intéressons-nous à ce programme :
@@ -234,27 +248,30 @@ class Personnage:
     return self.vie
   def perdVie (self):
     self.vie=self.vie-1
+
 gollum = Personnage(20)
 bilbo = Personnage(15)
 ```
 
-si dans la console Python vous tapez successivement :
-
-- *gollum.donneEtat()* vous allez obtenir 20
+- ```gollum.donneEtat()``` affiche 20
  
-- *bilbo.donneEtat()* vous allez obtenir 15
+- ```bilbo.donneEtat()``` affiche 15
 
-- gollum.perdVie()
+- ```gollum.perdVie()``` enlève 1 à l'attribut ```vie``` de ```gollum```
 
-- gollum.donneEtat() vous allez obtenir 19
+- ```gollum.donneEtat()``` affiche maintenant 19
 
-- bilbo.perdVie()
+- ```bilbo.perdVie()``` enlève 1 à l'attribut ```vie``` de ```bilbo``
 
-- bilbo.donneEtat() vous allez obtenir 14
+- ```bilbo.donneEtat()``` affiche 14
 
-Vous avez sans doute remarqué que lors de "l'utilisation" des instances biblo et gollum, nous avons uniquement utilisé des méthodes et nous n'avons plus directement utilisé des attributs (plus de "gollum.vie"). Il est important de savoir qu'en dehors de la classe l'utilisation des attributs est une mauvaise pratique en programmation orientée objet : les attributs doivent rester "à l'intérieur" de la classe, l'utilisateur de la classe ne doit pas les utiliser directement. Il peut les manipuler, mais uniquement par l'intermédiaire d'une méthode (la méthode self.perdVie() permet de manipuler l'attribut self.vie)
+Vous avez sans doute remarqué que lors de l'utilisation des instances bilbo et gollum, nous avons uniquement utilisé des méthodes et nous n'avons plus directement utilisé des attributs (plus de "gollum.vie"). 
 
-Pour l'instant nous avons utilisé les méthodes uniquement en tapant des instructions dans la console, il est évidemment possible d'utiliser ces méthodes directement dans votre programme :
+Il est important de savoir qu'en dehors de la classe l'utilisation des attributs est une mauvaise pratique en programmation orientée objet : les attributs doivent rester à l'intérieur de la classe.
+
+L'utilisateur de la classe ne doit pas les utiliser directement. Il peut les manipuler, mais uniquement par l'intermédiaire d'une méthode (la méthode self.perdVie() permet de manipuler l'attribut self.vie)
+
+Programme avec les méthodes :
 
 ```python
 class Personnage:
@@ -269,7 +286,7 @@ bilbo = Personnage(15)
 bilbo.perdVie()
 point=bilbo.donneEtat()
 ```
-Après l'exécution du programme ci-dessus, la variable *point* aura pour valeur 14
+Après l'exécution du programme ci-dessus, la variable ```point``` aura pour valeur 14
 
 Selon le type d'attaque subit, le personnage peut perdre plus ou moins de points de vie. Pour tenir compte de cet élément, il est possible d'ajouter un paramètre à la méthode perdVie :
 
@@ -281,13 +298,13 @@ class Personnage:
     return self.vie
   def perdVie (self,nbPoint):
     self.vie=self.vie-nbPoint
+
 bilbo = Personnage(15)
 bilbo.perdVie(2)
 point=bilbo.donneEtat()
 ```
 
-
-Après l'exécution du programme ci-dessus, la variable *point* aura pour valeur 13
+Après l'exécution du programme ci-dessus, la variable ```point``` aura pour valeur 13
 
 Il est possible d'ajouter une part d'aléatoire dans la méthode perdVie :
 
@@ -304,6 +321,7 @@ class Personnage:
     else :
       nbPoint = 2
     self.vie=self.vie-nbPoint
+
 bilbo = Personnage(15)
 bilbo.perdVie()
 point=bilbo.donneEtat()
@@ -313,7 +331,7 @@ N.B : ```random.random()``` renvoie une valeur aléatoire comprise entre 0 et 1
 
 Comme vous l'avez remarqué, il est possible d'utiliser une instruction conditionnelle (if / else) dans une méthode. Il est donc possible d'utiliser dans le même programme le paradigme objet et le paradigme impératif.
 
-Il est maintenant possible d'organiser un combat virtuel entre nos 2 personnages grâce à la classe *Personnage* que nous venons de créer :
+Il est maintenant possible d'organiser un combat virtuel entre nos 2 personnages grâce à la classe ```Personnage``` que nous venons de créer :
 
 ```python
 import random
@@ -329,6 +347,7 @@ class Personnage:
     else :
       nbPoint = 2
     self.vie=self.vie-nbPoint
+
 def game():
   bilbo = Personnage(20)
   gollum = Personnage(20)
@@ -344,10 +363,49 @@ def game():
   return msg
 ```
  
- Nous avons encore ici la démonstration qu'il est possible d'utiliser le paradigme objet et le paradigme impératif dans un même programme.
+Nous avons encore ici la démonstration qu'il est possible d'utiliser le paradigme objet et le paradigme impératif dans un même programme.
  
 ## 4) conclusion
 
-Il est important de bien comprendre qu'un programmeur doit maitriser plusieurs paradigmes de programmation (impératif, objet ou encore fonctionnelle). En effet, il sera plus facile d'utiliser le paradigme objet dans certains cas alors que dans d'autres situations, l'utilisation du paradigme fonctionnel sera préférable. Être capable de choisir le "bon" paradigme en fonction des situations fait partie du bagage de tout bon programmeur.
+Il est important de bien comprendre qu'un programmeur doit maitriser plusieurs paradigmes de programmation (impératif, objet ou encore fonctionnelle). En effet, il sera plus facile d'utiliser le paradigme objet dans certains cas alors que dans d'autres situations, l'utilisation du paradigme fonctionnel sera préférable. 
 
 Il est aussi important de bien comprendre que la frontière entre ces différents paradigmes est parfois floue, par exemple on utilise très souvent de l'impératif en programmation orientée objet.  
+
+>##### Exercice 1
+>
+>Soit la classe *Personnage* suivante :
+>
+>```py
+>class Personnage:
+>    def __init__(self, nbreDeVie):
+>        self.vie=nbreDeVie
+>    def donneEtat (self):
+>        return self.vie
+>    def perdVie (self,nbPoint):
+>        self.vie=self.vie-nbPoint
+>```
+>Ajoutez une méthode *soigne* qui permettra d'augmenter l'attribut *vie* d'une  valeur *nbr* (*nbr* sera un paramètre de la méthode *soigne*).
+>
+>Testez cette méthode en saisissant dans la console Python les instructions suivantes (les unes après les autres) :
+>
+>- toto = Personnage(15)
+>
+>- toto.donneEtat()
+>
+>- toto.perdVie(2)
+>
+>- toto.soigne(3)
+>
+>- toto.donneEtat()
+
+##### Exercice 2
+>
+>Écrivez une classe *Voiture* qui aura un attribut *vitesse* et 3 méthodes :
+>
+>- une méthode *accelere* qui permettra d'incrémenter l'attribut vitesse d'une unité
+>- une méthode *freine* qui permettra de diminuer la vitesse
+>- une méthode *getVitesse* qui renverra la valeur de la vitesse
+
+##### Exercice 3
+>
+>À partir de la classe créée à l'activité 14.2, écrivez un programme qui permettra d'atteindre la vitesse de 3 km/h, d'afficher cette vitesse dans la console puis de freiner jusqu'à l'arrêt complet du véhicule.
