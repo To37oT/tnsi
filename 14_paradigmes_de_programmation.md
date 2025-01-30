@@ -371,7 +371,7 @@ Il est important de bien comprendre qu'un programmeur doit maitriser plusieurs p
 
 Il est aussi important de bien comprendre que la frontière entre ces différents paradigmes est parfois floue, par exemple on utilise très souvent de l'impératif en programmation orientée objet.  
 
->##### Exercice 1
+##### Exercice 1
 >
 >Soit la classe *Personnage* suivante :
 >
