@@ -408,4 +408,4 @@ Il est aussi important de bien comprendre que la frontière entre ces différent
 
 ##### Exercice 3
 >
->À partir de la classe créée à l'activité 14.2, écrivez un programme qui permettra d'atteindre la vitesse de 3 km/h, d'afficher cette vitesse dans la console puis de freiner jusqu'à l'arrêt complet du véhicule.
+>À partir de la classe créée à l'exercice 2, écrivez un programme qui permettra d'atteindre la vitesse de 3 km/h, d'afficher cette vitesse dans la console puis de freiner jusqu'à l'arrêt complet du véhicule.
