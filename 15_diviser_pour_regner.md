@@ -7,13 +7,14 @@ date: 2024
 ---
 
 # Diviser pour régner
+
 ## 1) diviser pour régner
 
-Le diviser pour régner est une méthode algorithmique basée sur le principe suivant :
+Le **diviser pour régner** est une **méthode algorithmique** basée sur le principe suivant :
 
-On prend un problème (généralement complexe à résoudre), on divise ce problème en une multitude de petits problèmes, l'idée étant que les "petits problèmes" seront plus simples à résoudre que le problème original. Une fois les petits problèmes résolus, on recombine les "petits problèmes résolus" afin d'obtenir la solution du problème de départ.
+On prend un problème (généralement complexe à résoudre), on divise ce problème en une multitude de petits problèmes, **l'idée étant que les petits problèmes seront plus simples à résoudre que le problème original**. Une fois les petits problèmes résolus, on recombine les petits problèmes résolus afin d'obtenir la solution du problème de départ.
 
-Le paradigme "diviser pour régner" repose donc sur 3 étapes :
+La méthode "diviser pour régner" repose donc sur 3 étapes :
 
 - **DIVISER** : le problème d'origine est divisé en un certain nombre de sous-problèmes
 
@@ -21,7 +22,7 @@ Le paradigme "diviser pour régner" repose donc sur 3 étapes :
 
 - **COMBINER** : les solutions des sous-problèmes sont combinées afin d'obtenir la solution du problème d'origine.
 
-Les algorithmes basés sur le paradigme "diviser pour régner" sont très souvent des algorithmes récursifs.
+Les algorithmes basés sur la méthode "diviser pour régner" sont **très souvent des algorithmes récursifs**.
 
 Nous allons maintenant étudier un de ces algorithmes basés sur le principe diviser pour régner : le tri-fusion
 
@@ -29,7 +30,7 @@ Nous allons maintenant étudier un de ces algorithmes basés sur le principe div
 
 ### a) présentation
 
-Nous avons déjà étudié des algorithmes de tri : le tri par insertion et le tri par sélection. Nous allons maintenant étudier une nouvelle méthode de tri, le tri-fusion. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
+Nous avons déjà étudié des algorithmes de tri : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion) et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection). Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
 
 Soit l'algorithme suivant :
 
