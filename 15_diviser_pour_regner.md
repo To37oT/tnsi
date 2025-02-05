@@ -30,69 +30,67 @@ Nous allons maintenant étudier un de ces algorithmes basés sur le principe div
 
 ### a) présentation
 
-Nous avons déjà étudié des algorithmes de tri : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion) et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection). Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
+Nous avons déjà étudié des algorithmes de tri : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion){:target="_blank"} et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection){:target="_blank"}. Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
 
 Soit l'algorithme suivant :
 
 ```
 VARIABLE
-A : tableau d'entiers
-L : tableau d'entiers
-R : tableau d'entiers
-p : entier
-q : entier
-r : entier
-n1 : entier
-n2 : entier
-
+Tab : tableau d'entiers
+L : tableau d'entiers (L pour left)
+R : tableau d'entiers (R pour right)
+p : entier (représente l'indice gauche)
+q : entier (représente l'indice du milieu)
+r : entier (représente l'indice à droite)
+n1 : entier (nb d'élément à gauche lors de la fusion)
+n2 : entier (nb d'élément à droite lors de la fusion)
 
 DEBUT
 
-FUSION (A, p, q, r):
+FUSION (Tab, p, q, r):   (tableau initial, indice début, milieu, fin)
   n1 ← q - p + 1
   n2 ← r - q
-  créer tableau L[1..n1+1] et R[1..n2+1]
+  créer tableau L[1..n1] et R[1..n2]   (création de 2 tableaux vides)
   pour i ← 1 à n1:
-    L[i] ← A[p+i-1]
+    L[i] ← Tab[p+i-1]
   fin pour
   pour j ← 1 à n2:
-    R[j] ← A[q+j]
+    R[j] ← Tab[q+j]
   fin pour
-  L[n1+1] ← ∞
-  R[n2+1] ← ∞
+
   i ← 1
   j ← 1
   pour k ← p à r:
     si L[i] ⩽ R[j]:
-      A[k] ← L[i]
+      Tab[k] ← L[i]
       i ← i + 1
     sinon:
-      A[k] ← R[j]
+      Tab[k] ← R[j]
       j ← j + 1
     fin si
   fin pour
 fin FUSION
 
-TRI-FUSION(A, p, r):
+TRI-FUSION(Tab, p, r):
   si p < r:
-    q = (p + r) / 2
-    TRI-FUSION(A, p, q)
-    TRI-FUSION(A, q+1, r)
-    FUSION(A, p, q, r)
+    q = (p + r) // 2
+    TRI-FUSION(Tab, p, q)
+    TRI-FUSION(Tab, q+1, r)
+    FUSION(Tab, p, q, r)
   fin si
 fin TRI-FUSION
 FIN
 ```
 
-Pour trier un tableau A, on fait l'appel initial TRI-FUSION(A, 1, A.longueur)
+**Pour trier un tableau Tab, on fait l'appel initial TRI-FUSION(Tab, 1, Tab.longueur)**
 
-Rappel : Attention, en algorithmique, les indices des tableaux commencent à 1
+*Rappel : Attention, en algorithmique, les indices des tableaux commencent à 1*
 
-Cet algorithme est un peu difficile à appréhender, on notera qu'il est composé de deux fonctions FUSION et TRI-FUSION (fonction récursive). La fonction TRI-FUSION assure la phase "DIVISER" et la fonction FUSION assure les phases "RÉGNER" et "COMBINER".
+Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction récursive). La fonction TRI-FUSION assure la phase "DIVISER" et la fonction FUSION assure les phases "RÉGNER" et "COMBINER".
 
 Voici un exemple d'application de cet algorithme sur le tableau A = [23, 12, 4, 56, 35, 32, 42, 57, 3] :
 
-![](img/c15c_1.jpg)
+![c15c_1](https://github.com/user-attachments/assets/e4034325-21b5-4e52-8286-5f80c00b9cfc)
 
 On remarque que dans le cas du tri-fusion, la phase "RÉGNER" se réduit à sa plus simple expression, en effet, à la fin de la phase "DIVISER", nous avons à trier des tableaux qui comportent un seul élément, ce qui est évidemment trivial.
 
