@@ -32,6 +32,11 @@ Nous allons maintenant étudier un de ces algorithmes basés sur le principe div
 
 Nous avons déjà étudié des algorithmes de tri : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion){:target="_blank"} et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection){:target="_blank"}. Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
 
+#### Voici un exemple du fonctionnement du tri-fusion :
+
+![c15c_1](https://github.com/user-attachments/assets/e4034325-21b5-4e52-8286-5f80c00b9cfc)
+
+
 Soit l'algorithme suivant :
 
 ```
