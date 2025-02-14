@@ -30,12 +30,24 @@ Nous allons maintenant étudier un de ces algorithmes basés sur le principe div
 
 ### a) présentation
 
-Nous avons déjà étudié des algorithmes de tri : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion){:target="_blank"} et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection){:target="_blank"}. Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié.
+Nous avons déjà étudié en première 2 algorithmes de tri de **complexité quadratique** O(n²) : [**le tri par insertion**](https://fr.wikipedia.org/wiki/Tri_par_insertion){:target="_blank"} et [**le tri par sélection**](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection){:target="_blank"}. Nous allons maintenant étudier une nouvelle méthode de tri, **le tri-fusion**. Comme pour les algorithmes déjà étudiés, cet algorithme de tri fusion prend en entrée un tableau non trié et donne en sortie, le même tableau, mais trié. Cet algorithme permet de trier un tableau avec une meilleure complexité : O(nlog(n). Le principe de l’algorithme suit les phases de la méthode « diviser pour régner ».
+
+>**Rappel :**
+>
+>log<sub>a</sub>(b) donne la puissance à laquelle il faudrait élever a pour obtenir b.
+>
+>Exemple :
+>
+>log<sub>2</sub>(8) = 3
+
 
 #### Voici un exemple du fonctionnement du tri-fusion :
 
-![c15c_1](https://github.com/user-attachments/assets/e4034325-21b5-4e52-8286-5f80c00b9cfc)
+- Pour la découpe, on coupe simplement le tableau par son milieu. S’il possède n éléments, les deux sous-tableaux sont T1 = T[0 : n//2] et T2 = [n//2 : n].
+- Les tableaux sont découpés tant qu'ils comportent plusieurs éléments.
 
+
+![image](https://github.com/user-attachments/assets/5c96d98e-a20b-4a73-8d0d-f31b45be471c)
 
 Soit l'algorithme suivant :
 
