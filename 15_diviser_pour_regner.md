@@ -26,7 +26,7 @@ Les algorithmes basés sur la méthode "diviser pour régner" sont **très souve
 
 Nous allons maintenant étudier un de ces algorithmes basés sur le principe diviser pour régner : le tri-fusion
 
-## 2) Tri-fusion
+## 2) Tri-fusion  (merge sort en anglais)
 
 ### a) présentation
 
@@ -43,11 +43,19 @@ Nous avons déjà étudié en première 2 algorithmes de tri de **complexité qu
 
 #### Voici un exemple du fonctionnement du tri-fusion :
 
-- Pour la découpe, on coupe simplement le tableau par son milieu. S’il possède n éléments, les deux sous-tableaux sont T1 = T[0 : n//2] et T2 = [n//2 : n].
-- Les tableaux sont découpés tant qu'ils comportent plusieurs éléments.
+- Pour la découpe, on coupe simplement le tableau par son milieu. S’il possède n éléments, les deux sous-tableaux sont :
 
+T1 = T[0 : n//2] et T2 = [n//2 : n].
 
-![image](https://github.com/user-attachments/assets/5c96d98e-a20b-4a73-8d0d-f31b45be471c)
+- Les tableaux sont découpés tant qu'ils comportent plusieurs éléments. (DIVISER)
+
+- On prépare ensuite les éléments pour la fusion. (RÉGNER)
+
+- On tri le tableau en fusionnant les 2 sous-listes (COMBINER)
+
+- Les éléments sont directements triés sur le tableau d'origine (grâce à la copie des valeurs)
+
+[![image](https://github.com/user-attachments/assets/5c96d98e-a20b-4a73-8d0d-f31b45be471c)](https://github.com/user-attachments/assets/5c96d98e-a20b-4a73-8d0d-f31b45be471c){:target="_blank"}
 
 Soit l'algorithme suivant :
 
