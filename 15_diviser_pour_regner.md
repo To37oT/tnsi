@@ -125,8 +125,6 @@ Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction r
 >- Soit la fonction renvoie un élément et il faut le réceptionner.
 >- Soit la fonction de renvoie rien et nous enchainons avec le reste du programme.
 
->**Rappel :**
->
 >**Une récursivité doit comporter une condition pour s'exécuter**
 
 ##### Exercice 2
