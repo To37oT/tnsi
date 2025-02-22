@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Chapitre 15 - Diviser pour régner
-permalink: /14-diviser-pour-regner/
+permalink: /15-diviser-pour-regner/
 published: true
 date: 2024
 ---
@@ -45,7 +45,7 @@ Nous avons déjà étudié en première 2 algorithmes de tri de **complexité qu
 
 - Pour la découpe, on coupe simplement le tableau par son milieu. S’il possède n éléments, les deux sous-tableaux sont :
 
-T1 = T[0 : n//2] et T2 = [n//2 : n].
+T1 = T[0 : n//2] et T2 = [n//2 + 1 : n].
 
 - Les tableaux sont découpés tant qu'ils comportent plusieurs éléments. (DIVISER)
 
@@ -113,33 +113,33 @@ FIN
 
 Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction récursive). La fonction TRI-FUSION assure la phase "DIVISER" et la fonction FUSION assure les phases "RÉGNER" et "COMBINER".
 
-Voici un exemple d'application de cet algorithme sur le tableau A = [23, 12, 4, 56, 35, 32, 42, 57, 3] :
 
-![c15c_1](https://github.com/user-attachments/assets/e4034325-21b5-4e52-8286-5f80c00b9cfc)
+##### Exercice 1
+>
+> Faites la liste, comme sur l'image plus haut, des différentes divisions et fusions qui vont avoir lieu sur le tri du tableau [23, 12, 4, 56, 35, 32, 42, 57, 3]
 
-On remarque que dans le cas du tri-fusion, la phase "RÉGNER" se réduit à sa plus simple expression, en effet, à la fin de la phase "DIVISER", nous avons à trier des tableaux qui comportent un seul élément, ce qui est évidemment trivial.
+>**Rappel :**
+>
+>**Lorsqu'une fonction se termine, nous revenons à l'endroit où elle avait été précédemment appelée.**
+>
+>- Soit la fonction renvoie un élément et il faut le réceptionner.
+>- Soit la fonction de renvoie rien et nous enchainons avec le reste du programme.
 
-La fusion des 2 tableaux déjà triés est simple, prenons comme exemple la dernière fusion entre le tableau [4, 12, 23, 35, 56] et le tableau [3, 32, 42, 57] (le principe est identique pour toutes les fusions) :
+>**Rappel :**
+>
+>**Une récursivité doit comporter une condition pour s'exécuter**
 
-Soit T le tableau issu de la fusion du tableau B = [4, 12, 23, 35, 56] et du tableau C = [3, 32, 42, 57] (on donne des noms aux tableaux uniquement pour essayer de rendre l'explication la plus claire possible).
+##### Exercice 2
+>
+>La fonction ```FUSION``` est appelée de nombreuses fois lors du tri du tableau de l'exercice 1.
+>
+> Si nous ajoutions un affichage du tableau ```Tab``` à la fin de la fonction de fusion, quel serait l'affichage successif du tableau ?
+>
+>[23, 12, 4, 56, 35, 32, 42, 57, 3]
+>[12, 23, 4, 56, 35, 32, 42, 57, 3]
+>...
 
-- On considère le premier élément du tableau B (4) et le premier élément du tableau C (3) : 3 est inférieur à 4, on place 3 dans le tableau T et on le supprime du tableau C. Nous avons donc alors T = [3], B = [4, 12, 23, 35, 56] et C = [32, 42, 57].
 
-- On recommence ensuite à comparer le premier élément du tableau B (4) et le premier élément du tableau C (32) : 4 est inférieur à 32, on place 4 dans le tableau T et on le supprime du tableau B. Nous avons donc alors T = [3, 4], B = [12, 23, 35, 56] et C = [32, 42, 57].
-
-- On compare le premier élément du tableau B (12) et le premier élément du tableau C (32) : 12 est inférieur à 32, on place 12 dans le tableau T et on le supprime du tableau B. Nous avons donc alors T = [3, 4, 12], B = [23, 35, 56] et C = [32, 42, 57].
-
-- On compare le premier élément du tableau B (23) et le premier élément du tableau C (32) : 23 est inférieur à 32, on place 23 dans le tableau T et on le supprime du tableau B. Nous avons donc alors T = [3, 4, 12, 23], B = [35, 56] et C = [32, 42, 57].
-
-- On compare le premier élément du tableau B (35) et le premier élément du tableau C (32) : 32 est inférieur à 35, on place 32 dans le tableau T et on le supprime du tableau C. Nous avons donc alors T = [3, 4, 12, 23, 32], B = [35, 56] et C = [42, 57].
-
-- On compare le premier élément du tableau B (35) et le premier élément du tableau C (42) : 35 est inférieur à 42, on place 35 dans le tableau T et on le supprime du tableau C. Nous avons donc alors T = [3, 4, 12, 23, 32, 35], B = [56] et C = [42, 57].
-
-- On compare le premier élément du tableau B (56) et le premier élément du tableau C (42) : 42 est inférieur à 56, on place 42 dans le tableau T et on le supprime du tableau C. Nous avons donc alors T = [3, 4, 12, 23, 32, 35, 42], B = [56] et C = [57].
-
-- On compare le premier élément du tableau B (56) et le premier élément du tableau C (57) : 56 est inférieur à 57, on place 56 dans le tableau T et on le supprime du tableau B. Nous avons donc alors T = [3, 4, 12, 23, 32, 35, 42, 56], B = [] et C = [57].
-
-- Le tableau B est vide, il nous reste juste à placer le seul élément qui reste dans C (57) dans T : T = [3, 4, 12, 23, 32, 35, 42, 56, 57], B = [] et C = []. La fusion est terminée.
 
 ### b) complexité
 
