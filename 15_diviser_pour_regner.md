@@ -116,7 +116,7 @@ Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction r
 
 ##### Exercice 1
 >
-> Faites la liste, comme sur l'image plus haut, des différentes divisions et fusions qui vont avoir lieu sur le tri du tableau [23, 12, 4, 56, 35, 32, 42, 57, 3]
+> Faire la liste, comme sur l'image plus haut, des différentes divisions et fusions qui vont avoir lieu sur le tri du tableau [23, 12, 4, 56, 35, 32, 42, 57, 3]
 
 >**Rappel :**
 >
@@ -133,22 +133,23 @@ Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction r
 >
 >La fonction ```FUSION``` est appelée de nombreuses fois lors du tri du tableau de l'exercice 1.
 >
-> Si nous ajoutions un affichage du tableau ```Tab``` à la fin de la fonction de fusion, quel serait l'affichage successif du tableau ?
+> Si l'on ajoute un affichage du tableau ```Tab``` à la fin de la fonction de fusion, quel sera l'affichage successif du tableau ?
 >
 >[23, 12, 4, 56, 35, 32, 42, 57, 3]
 >[12, 23, 4, 56, 35, 32, 42, 57, 3]
 >...
 
-
-
 ### b) complexité
 
-Nous avons vu que le tri par insertion et tri par sélection ont tous les deux une complexité O(n<sup>2</sup>). Qu'en est-il pour le tri-fusion ?
-
-Le calcul rigoureux de la complexité de cet algorithme sort du cadre de ce cours. Mais, en remarquant que la première phase (DIVISER) consiste à "couper" les tableaux en deux plusieurs fois de suite, intuitivement, on peut dire qu'un logarithme base 2 doit intervenir. La deuxième phase consiste à faire des comparaisons entre les premiers éléments de chaque tableau à fusionner, on peut donc supposer que pour un tableau de n éléments, on aura n comparaisons. En combinant ces 2 constations on peut donc dire que la complexité du tri-fusion est en O(nlog(n)) (encore une fois la "démonstration" proposée ici n'a rien de rigoureux).
+Le calcul rigoureux de la complexité de cet algorithme sort du cadre de ce cours. Mais, en remarquant que la première phase (DIVISER) consiste à couper les tableaux en deux plusieurs fois de suite, nous pouvons en déduire que la complexité tendra à être constante sur un grand nombre d'entrée (10 millions de valeur, c'est une division en plus que 5 millions). nous parlerons d'une complexité logarithmique. La deuxième phase consiste à faire des comparaisons entre les premiers éléments de chaque tableau à fusionner, on peut donc supposer que pour un tableau de n éléments, on aura n comparaisons (donc une complexité linéaire). En combinant ces 2 constations on peut donc dire que la complexité du tri-fusion est en O(nlog(n)) (la démonstration proposée ici n'a rien de rigoureux).
 
 La comparaison des courbes de la fonction n<sup>2</sup> (en rouge) et nlog(n) (en bleu) :
 
-![](img/c15c_2.png)
+![c15c_2](https://github.com/user-attachments/assets/f1f37565-6915-4861-8c80-1e28f1d5ecb0)
 
-nous montre que l'algorithme de tri-fusion est plus "efficace" que l'algorithme de tri par insertion ou que l'algorithme de tri par sélection.
+nous montre que l'algorithme de tri-fusion est plus efficace que l'algorithme de tri par insertion ou que l'algorithme de tri par sélection.
+
+##### Exercice 3
+>
+> Proposer une implémentation de l'algorithme de tri-fusion
+
