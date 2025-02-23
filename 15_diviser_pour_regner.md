@@ -154,4 +154,6 @@ nous montre que l'algorithme de tri-fusion est plus efficace que l'algorithme de
 >La création d'un tableau de n éléments peut se faire ainsi :
 >
 >```tab = n * [0]```
+>
+>Vous rencontrerez une erreur ```out of range``` dans la partie fusion, pourquoi et quelles modifications de l'algorithme pouvez-vous proposer ?
 
