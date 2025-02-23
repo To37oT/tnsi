@@ -12,3 +12,6 @@ date: 2024
 
 ## Partie 2 : Récursivité, structures de données et algorithmique
 [Chapitre 4 - Récursivité]({{site.baseurl}}/04-recursivite/)<br>
+
+
+https://to37ot.github.io/tnsi/15-diviser-pour-regner/
