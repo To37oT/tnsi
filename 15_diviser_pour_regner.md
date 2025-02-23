@@ -133,9 +133,9 @@ Cet algorithme est composé de deux fonctions : FUSION et TRI-FUSION (fonction r
 >
 > Si l'on ajoute un affichage du tableau ```Tab``` à la fin de la fonction de fusion, quel sera l'affichage successif du tableau ?
 >
->[23, 12, 4, 56, 35, 32, 42, 57, 3]
->[12, 23, 4, 56, 35, 32, 42, 57, 3]
->...
+>```[23, 12, 4, 56, 35, 32, 42, 57, 3]```
+>```[12, 23, 4, 56, 35, 32, 42, 57, 3]```
+>```...```
 
 ### b) complexité
 
@@ -149,5 +149,9 @@ nous montre que l'algorithme de tri-fusion est plus efficace que l'algorithme de
 
 ##### Exercice 3
 >
-> Proposer une implémentation de l'algorithme de tri-fusion
+> Proposer une implémentation de l'algorithme de tri-fusion.
+>
+>La création d'un tableau de n éléments peut se faire ainsi :
+>
+>```tab = n * [0]```
 
