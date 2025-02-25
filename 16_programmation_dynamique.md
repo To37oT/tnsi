@@ -22,16 +22,44 @@ def fib(n) :
 			
 Pour n=6, il est possible d'illustrer le fonctionnement de ce programme avec le schéma ci-dessous :
 
-![](img/c16c_1.jpg)
+![c16c_1](https://github.com/user-attachments/assets/1d140831-f5fd-491b-9ab3-330d8504a8de)
 
+Vous pouvez constater que l'on a une structure arborescente (typique dans les algorithmes récursifs), si on additionne toutes les feuilles de cette structure arborescente, on retrouve bien 8.
 
-Vous pouvez constater que l'on a une structure arborescente (typique dans les algorithmes récursifs), si on additionne toutes les feuilles de cette structure arborescente (fib(1)=1 et fib(0)=0), on retrouve bien 8.
+En observant attentivement le schéma ci-dessus, on remarque que de nombreux calculs sont effectués plusieurs fois : par exemple, on retrouve le calcul de fib(4) à 2 endroits :
 
-En observant attentivement le schéma ci-dessus, vous avez remarqué que de nombreux calculs sont inutiles, car effectués 2 fois : par exemple, on retrouve le calcul de fib(4) à 2 endroits (en haut à droite et un peu plus bas à gauche) :
+![c16c_2](https://github.com/user-attachments/assets/f5d1814e-1c05-4b8a-87b3-4a148fa1d730)
 
-![](img/c16c_2.jpg)
+On pourrait donc grandement simplifier le calcul en calculant une fois pour toutes fib(4), en **mémorisant** le résultat et en le réutilisant quand nécessaire :
 
-On pourrait donc grandement simplifier le calcul en calculant une fois pour toutes fib(4), en "mémorisant" le résultat et en le réutilisant quand nécessaire :
+```python
+def fib_mem(n):
+	mem = [0]*(n+1)  #permet de créer un tableau contenant n+1 zéro
+	return f_mem(n, mem)
+
+def f_mem(n, mem):
+	if n == 0 or n == 1:
+		mem[n] = n
+		return n
+	elif mem[n] > 0:
+		return mem[n]
+	else:
+		mem[n]= f_mem(n-1, mem) + f_mem(n-2, mem)
+	return mem[n]
+
+print (fib_mem(6))
+```
+		
+Nous pouvons résumer ce programme comme suit :
+
+- si la valeur de fib(a) n'a jamais été calculée  (si ```mem[n]``` est égal à ```0```), elle est calculée, puis ensuite elle est stockée dans le tableau ```mem```.
+- si la valeur de fib(a) a déjà été calculée (si ```mem[n]``` est plus grand que ```0```), nous n'avons aucun calcul à faire, on utilise juste la valeur présente dans le tableau.  
+
+Dans le cas qui nous intéresse, on peut s'interroger sur le bénéfice de cette opération de mémorisation, mais pour des valeurs de n beaucoup plus élevées, la question ne se pose même pas, le gain en termes de performance (temps de calcul) est évident. Pour rappel, avec des valeurs n très élevées, dans le cas du programme récursif sans mémorisation, le programme plante à cause du trop grand nombre d'appels récursifs.
+
+La méthode que nous venons d'utiliser se nomme **programmation dynamique**.
+
+Pour information, voici une autre manière d'écrire le programme précédent avec une fonction dans la fonction.
 
 ```python
 def fib_mem(n):
@@ -47,17 +75,6 @@ def fib_mem(n):
         return mem[n]
     return f_mem(n)
 ```
-		
-Nous pouvons résumer ce programme comme suit :
-
-- si la valeur de fib(a) n'a jamais  été calculée  (si  la valeur de fib(a) n'est pas encore dans le tableau  *mem*), elle est calculée, puis ensuite elle est stockée dans le tableau *mem*
-- si la valeur de fib(a) a déjà été calculée (si  la valeur de fib(a) est déjà dans le tableau  *mem*), nous n'avons aucun calcul à faire, on utilise juste la valeur présente dans le tableau.  
-
-Dans le cas qui nous intéresse, on peut légitimement s'interroger sur le bénéfice de cette opération de "mémorisation", mais pour des valeurs de n beaucoup plus élevées, la question ne se pose même pas, le gain en termes de performance (temps de calcul) est évident. Pour des valeurs n très élevées, dans le cas du programme récursif "classique" (n'utilisant pas la "mémorisation"), on peut même se retrouver avec un programme qui "plante" à cause du trop grand nombre d'appels récursifs.
-
-En réfléchissant un peu sur le cas que nous venons de traiter, nous divisons un problème "complexe" (calcul de fib(6)) en une multitude de petits problèmes faciles à résoudre (fib(0) et fib(1)), puis nous utilisons les résultats obtenus pour les "petits problèmes" pour résoudre le problème "complexe". Cela devrait vous rappeler la méthode "diviser pour régner" !
-
-En fait, ce n'est pas tout à fait cela puisque dans le cas de la méthode "diviser pour régner", la "mémorisation" des calculs n'est pas prévue. La méthode que nous venons d'utiliser se nomme "programmation dynamique".
 
 ## 2) Programmation dynamique
 
