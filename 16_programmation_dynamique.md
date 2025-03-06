@@ -94,8 +94,8 @@ La programmation dynamique s'applique quand les sous-problèmes se recoupent, c'
 
 Il existe 2 facettes équivalentes de la programmation dynamique :
 
-- la programmation descendante aussi appelée top-down (c'est la méthode que nous avons utilisée ci-dessus pour Fibonacci et que nous allons utiliser immédiatement ci-dessous)
-- la programmation ascendante aussi appelée bottom-up (que nous étudierons un peu plus tard)
+- la **programmation descendante** aussi appelée top-down (c'est la méthode que nous avons utilisée ci-dessus pour Fibonacci et que nous allons utiliser immédiatement ci-dessous)
+- la **programmation ascendante** aussi appelée bottom-up (que nous étudierons un peu plus tard)
 
 Poursuivons donc notre étude de l'approche descendante avec le problème du rendu de monnaie :
 
@@ -194,7 +194,7 @@ Essayons de comprendre plus en détail comment le programme ci-dessous détermin
 
 Étudions cet arbre : 
 
-![](img/c16c_3.jpg)
+![image](https://github.com/user-attachments/assets/8b711af4-6c83-417f-a664-c377b070d71c)
 
 Plusieurs remarques s'imposent :
 
@@ -206,11 +206,11 @@ Plusieurs remarques s'imposent :
 
 Si maintenant on tente d'exécuter la même fonction avec une valeur à rendre beaucoup plus grande (par exemple 171 cts), le programme plante ! Pourquoi ? Parce que les appels récursifs sont trop nombreux, on dépasse la capacité de la pile.
 
-La programmation dynamique va nous   permettre de résoudre ce problème.
+La programmation dynamique va nous permettre de résoudre ce problème.
 
 Comme vous avez peut-être déjà dû le remarquer, même dans le cas simple évoqué ci-dessus (11 cts à rendre), nous faisons plusieurs fois exactement le même calcul. Par exemple on retrouve 2 fois la branche qui part de "4" :
 
-![](img/c16c_4.jpg)
+![image](https://github.com/user-attachments/assets/55e8d3b6-dcf7-4c5e-a6ae-8aa8b151df35)
 
 Il va donc être possible d'appliquer la même méthode que pour Fibonacci.
 
