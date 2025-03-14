@@ -10,7 +10,7 @@ date: 2024
 
 ## 1) introduction
 
-Les algorithmes qui permettent de trouver une sous-chaine de caractères dans une chaine de caractères plus grande sont des "grands classiques" de l'algorithmique. On parle aussi de recherche d'un motif (sous-chaine) dans un texte. Voici un exemple :
+Les algorithmes qui permettent de trouver une sous-chaine de caractères dans une chaine de caractères plus grande sont des grands classiques de l'algorithmique. On parle aussi de recherche d'un motif (sous-chaine) dans un texte. Voici un exemple :
 
 Soit le texte suivant :
 
@@ -30,11 +30,11 @@ Comme son nom l'indique, la bioinformatique est issue de la rencontre de l'infor
 
 Comme vous le savez déjà, l'information génétique présente dans nos cellules est portée par les molécules d'ADN. Les molécules d'ADN sont, entre autres, composées de bases azotées ayant pour noms : Adénine (représenté par un A), Thymine (représenté par un T), Guanine (représenté par un G) et Cytosine (représenté par un C).
 
-molécule d'ADN
+**molécule d'ADN**
 
-![](img/c17c_1.gif)
+![c17c_1](https://github.com/user-attachments/assets/2210e01f-51bb-4b5b-825c-2c12d1b2a462)
 
-L'information génétique est donc très souvent représentée par de très longues chaines de caractères, composées des caractères A, T, G et C. Exemple : CTATTCAGCAGTC...
+L'information génétique est donc régulièrement représentée par de très longues chaines de caractères, composées des caractères A, T, G et C. Exemple : CTATTCAGCAGTC...
 
 Il est souvent nécessaire de détecter la présence de certains enchainements de bases azotées (dans la plupart des cas un triplet de bases azotées code pour 1 acide aminé et la combinaison d'acides aminés forme une protéine). Par exemple, on peut se poser la question suivante : trouve-t-on le triplet ACG dans le brin d'ADN suivant (et si oui, en quelle position ?) :
 
@@ -43,9 +43,9 @@ CAAGCGCACAAGACGCGGCAGACCTTCGTTATAGGCGATGATTTCGAACCTACTAGTGGGTCTCTTAGGCCGAGCGGTTC
 ```
 ### b) utilisation d'un algorithme naïf
 
-Nous allons commencer par le premier algorithme qui nous vient à l'esprit (on parle souvent d'algorithme "naïf") :
+Nous allons commencer par le premier algorithme qui nous vient à l'esprit (on parle souvent d'algorithme naïf) :
 
-![](img/c17c_2.jpg)
+![c17c_2](https://github.com/user-attachments/assets/129c45c6-afb3-41f4-a7d3-d6a14c0ab4cb)
 
 
 1. on place le motif recherché au même niveau que les 3 premiers caractères de notre chaine, le premier élément du motif ne correspond pas au premier élément de la chaine (A et C), on décale le motif d'un cran vers la droite.
@@ -60,13 +60,13 @@ Nous allons commencer par le premier algorithme qui nous vient à l'esprit (on p
 
 6. ... on continue le processus jusqu'au moment où les 3 éléments du motif correspondent avec les 3 éléments de la chaine situés au même niveau.
 
-Cet algorithme naïf peut, selon les situations demander un très grand nombre de comparaisons, ce qui peut entraîner un très long temps de "calcul" avec des chaines très très longues. L'algorithme de Boyer-Moore permet de faire mieux en termes de comparaisons à effectuer
+Cet algorithme naïf peut, selon les situations demander un très grand nombre de comparaisons, ce qui peut entraîner un très long temps de calcul avec des chaines très très longues. **L'algorithme de Boyer-Moore** permet de faire mieux en termes de comparaisons à effectuer
 
 ### c) Algoritme de Boyer-Moore
 
 L'algorithme de Boyer-Moore se base sur les caractéristiques suivantes :
 
-- l'algorithme effectue un prétraitement du motif. Cela signifie que l'algorithme "connait" les caractères qui se trouvent dans le motif
+- l'algorithme effectue un prétraitement du motif. Cela signifie que l'algorithme connait les caractères qui se trouvent dans **le motif**.
 
 - on commence la comparaison motif-chaine par la droite du motif. Par exemple pour le motif CGGCAG, on compare d'abord le G, puis le A, puis C...on parcourt le motif de la droite vers la gauche
 
@@ -79,7 +79,7 @@ CAATGTCTGCACCAAGACGCCGGCAGGTGCAGACCTTCGTTATAGGCGATGATTTCGAACCTACTAGTGGGTCTCTTAGG
 ```
 et le motif : CGGCAG
 
-![](img/c17c_3.jpg)
+![c17c_3](https://github.com/user-attachments/assets/118e68f4-983f-4a52-b8ea-965e571c330a)
 
 1. on commence la comparaison par la droite, G et T ne correspondent pas. Le prétraitement du motif nous permet de savoir qu'il n'y a pas de T dans ce dernier, on peut décaler le motif de 6 crans vers la droite.
 
@@ -102,3 +102,51 @@ et le motif : CGGCAG
 10. toutes les lettres correspondent, on a trouvé le motif dans la chaine.
 
 On peut remarquer que l'on a bien, en fonction des cas, effectué plusieurs décalages en un coup, ce qui, au bout du compte, permet de faire moins de comparaison que l'algorithme naïf. On peut aussi remarquer que plus le motif est grand et plus l'algorithme de Boyer-Moore sera efficace.
+
+##### Exercice 1
+>
+>Voici la première strophe du poème de Paul Verlaine *Chanson d'automne* :
+>
+>Les sanglots longs  
+>Des violons  
+>De l'automne  
+>Blessent mon coeur  
+>D'une langueur    
+>Monotone.
+>
+>1) Recherchez le motif uto dans cette strophe en utilisant l'algorithme de Boyer-Moore
+>
+>2) Recherchez  le motif  ail dans cette strophe en utilisant l'algorithme de Boyer-Moore
+
+
+##### Exercice 2
+>La fonction *recherche* ci-dessous permet de trouver la position du motif *motif* dans le texte *txt*. Si le motif *motif* est présent dans texte *txt*, la fonction *recherche* renvoie un tableau contenant les indices de positions du motif dans le texte. Dans le cas où le motif n'est pas présent, la fonction *recherche* renvoie un tableau vide.
+>
+>Par exemple *recherche("AZERTYAZER", "ER")* renverra le  tableau [2,8], *recherche("AZERTYAZER", "AB")* renverra le tableau [ ].
+>
+>Après avoir étudié attentivement cette fonction *recherche*, vous compléterez cette fonction (remplacez les ...) pour qu'elle fournisse les résultats attendus.
+>
+>```python
+>def recherche(txt, motif):
+>    NO_CAR = 256
+>    m = len(motif)
+>    n = len(...)
+>    tab_car = [-1]*NO_CAR
+>    for i in range(...):
+>        tab_car[ord(motif[i])] = i
+>    decalage = 0
+>    res = ...
+>    while(decalage <= n-m):
+>        j = m-1
+>        while j>=0 and motif[j] == txt[decalage+j]:
+>            j = j - 1
+>        if j<0:
+>            res.append(decalage)
+>            if decalage+m<n :
+>                decalage = decalage + m-tab_car[ord(txt[decalage+m])]
+>            else :
+>                decalage = decalage + 1
+>        else:
+>            decalage = decalage + max(1, j-tab_car[ord(txt[decalage+j])])
+>    return res
+>```
